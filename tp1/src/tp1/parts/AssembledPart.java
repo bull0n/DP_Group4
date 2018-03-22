@@ -4,22 +4,12 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class AssembledPart implements Serializable {
+public class AssembledPart extends PartComposite implements Serializable {
 	private static final long serialVersionUID = -2805555670934919157L;
-	private final Collection<Part> parts;
 	final private Dimension3D dimensions;
 
 	public AssembledPart(Dimension3D dimensions) {
-		this.parts = new LinkedList<Part>();
 		this.dimensions = dimensions;
-	}
-
-	public void addPart(Part part) {
-		this.parts.add(part);
-	}
-
-	int getNumberOfElements() {
-		return this.parts.size();
 	}
 
 	public Dimension3D getDimensions() {
@@ -30,13 +20,7 @@ public class AssembledPart implements Serializable {
 		return this.dimensions.x * this.dimensions.y * this.dimensions.z;
 	}
 
-	public double getWeight() {
-		double w = 0;
-		for (Part p : parts)
-			w += p.getWeight();
-		return w;
-	}
-
+	@Override
 	public String toString() {
 		return "Assembled[" + this.parts.toString() + ":" + this.dimensions + "]";
 	}
