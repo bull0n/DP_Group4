@@ -1,0 +1,33 @@
+TP1
+
+Première partie
+
+Dans plusieurs parties de vos applications, vous devez travailler avec des machines, des pièces complexes et des pièces simples. Vous avez pour ceci, trois classes d'objets:
+
+Classe Machine : represente des machines complètes
+- contient une collection de pièces simples
+- contient une collection de pièces complèxes
+
+Classe AssembledPart
+- contient une collection de pièces simples
+
+Classe Part
+- represente une pièce simple
+- les pièces simples sont indivisibles
+
+Vous avez deux exemples d'utilisation de ces classes:
+
+Classe CreateMachine
+- construit une machine avec un ensemble aléatoire de pièces simples et complèxes
+- enregistre cette machine dans un fichier "machine.dat"
+
+Classe ShowMachine
+- lit une machine du fichier "machine.dat"
+- affiche cette machine à l'écran
+
+Vous devez améliorer la construction de cet ensemble de classes, en utilisant le pattern COMPOSITE.
+
+
+Deuxième partie
+
+Les applications CreateMachine et ShowMachine utilisent un fichier de configuration qui est créé et accédé à plusieurs endroits. À chaque fois, un objet de la classe Config, qui traite ce fichier est créé et ensuite détruit. Vous devez améliorer la gestion du fichier de configuration, en utilisant le pattern SINGLETON.
