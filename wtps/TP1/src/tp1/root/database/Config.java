@@ -1,11 +1,11 @@
-package tp1.database;
-
+package tp1.root.database;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
+
 
 public class Config {
 	private String propertyFileName = null;
@@ -79,22 +79,16 @@ public class Config {
 		}
 	}
 
-	private Config() {
-		this.propertyFileName = CONFIG_FILE;
+	public Config() {
+		this("config.properties");
+	}
+
+	public Config(String file) {
+		propertyFileName = file;
 		load();
 	}
 
 	public String toString() {
 		return "db://" + username + ":" + password + "@" + database;
 	}
-
-	public static Config getConfig() {
-		if (Config.instance == null) {
-			Config.instance = new Config();
-		}
-		return Config.instance;
-	}
-
-	private static Config instance = null;
-	private static final String CONFIG_FILE = "config.properties";
 }

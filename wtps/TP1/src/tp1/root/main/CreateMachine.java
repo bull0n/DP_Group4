@@ -1,11 +1,11 @@
-package tp1.main;
+package tp1.root.main;
 
-import tp1.database.Config;
-import tp1.database.Storage;
-import tp1.parts.AssembledPart;
-import tp1.parts.Dimension3D;
-import tp1.parts.Machine;
-import tp1.parts.Part;
+import tp1.root.database.Config;
+import tp1.root.database.Storage;
+import tp1.root.parts.AssembledPart;
+import tp1.root.parts.Dimension3D;
+import tp1.root.parts.Machine;
+import tp1.root.parts.Part;
 
 public class CreateMachine {
 
@@ -21,12 +21,12 @@ public class CreateMachine {
 		System.out.println(m);
 		s.save(m);
 		System.out.println("Machine stored.");
-
+		
 	}
 
 	private static void createConfigFile() {
 		System.out.println("Creating configuration file...");
-		Config c = Config.getConfig();
+		Config c = new Config();
 		c.setDatabase(DATA_FILE);
 		c.setUsername("golum");
 		c.setPassword("myprecious");
@@ -39,9 +39,9 @@ public class CreateMachine {
 		double z = min + (int) (Math.random() * 5);
 		return new Dimension3D(x, y, z);
 	}
-
+	
 	private static Part createRandomPart() {
-		String tab[] = { "Latch", "Transformer", "Gage", "Screw", "Shaft", "Belt", "Clamp", "Nut", "Spring" };
+		String tab[] = {"Latch", "Transformer", "Gage", "Screw", "Shaft", "Belt", "Clamp", "Nut", "Spring" };
 		int partnum = (int) (Math.random() * tab.length);
 		double w = 1 + (int) (Math.random() * 10) / 10.;
 		return new Part(tab[partnum], createRandomDimension(1), w);
@@ -55,20 +55,15 @@ public class CreateMachine {
 		System.out.println("Creating a Machine...");
 		Machine m = new Machine();
 
-		try {
-			for (int i = 0; i < NUM_PARTS; i++)
-				m.add(createRandomPart());
+		for (int i=0; i<NUM_PARTS; i++)
+			m.addPart(createRandomPart());
 
-			for (int i = 0; i < NUM_ASSEMBLED_PARTS; i++) {
-				AssembledPart ap = new AssembledPart(createRandomDimension(10));
-				for (int j = 0; j < NUM_PARTS_ASSEMBLED; j++)
-					ap.add(createRandomPart());
-				m.add(ap);
-			}
-		} catch (Exception e) {
-			System.out.println(e);
+		for (int i=0; i<NUM_ASSEMBLED_PARTS; i++) {
+			AssembledPart ap = new AssembledPart(createRandomDimension(10));
+			for (int j=0; j<NUM_PARTS_ASSEMBLED; j++)
+				ap.addPart(createRandomPart());
+			m.addAssembledPart(ap);
 		}
-
 		return m;
 	}
 

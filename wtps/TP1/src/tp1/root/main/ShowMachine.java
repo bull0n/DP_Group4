@@ -1,7 +1,7 @@
-package tp1.main;
+package tp1.root.main;
 
-import tp1.database.Storage;
-import tp1.parts.Machine;
+import tp1.root.database.Storage;
+import tp1.root.parts.Machine;
 
 public class ShowMachine {
 
@@ -14,6 +14,7 @@ public class ShowMachine {
 		} else {
 			System.out.println("File or Machine not found.");
 		}
+		
 	}
-	
+
 }

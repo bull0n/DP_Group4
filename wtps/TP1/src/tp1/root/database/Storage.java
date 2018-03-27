@@ -1,4 +1,4 @@
-package tp1.database;
+package tp1.root.database;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import tp1.parts.Machine;
+import tp1.root.parts.Machine;
 
 public class Storage {
 	final private String fileName;
 
 	public Storage() {
-		Config config = Config.getConfig();
+		Config config = new Config();
 		fileName = config.getDatabase();
 	}
 
@@ -33,6 +33,7 @@ public class Storage {
 		} catch (Exception ex) {
 			ret = null;
 		}
+
 		return ret;
 	}
 

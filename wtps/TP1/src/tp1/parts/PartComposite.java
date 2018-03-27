@@ -1,9 +1,11 @@
 package tp1.parts;
 
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class PartComposite implements PartComponent {
+public abstract class PartComposite implements Serializable, PartComponent {
 
 	public PartComposite() {
 		parts = new LinkedList<PartComponent>();
@@ -27,12 +29,10 @@ public abstract class PartComposite implements PartComponent {
 
 		return parts.get(nChild);
 	}
-	
 
 	int getNumberOfElements() {
 		return this.parts.size();
 	}
-	
 
 	public double getWeight() {
 		double w = 0;
