@@ -18,76 +18,80 @@ numbersections: true
 
 ### Identification
 
-Les classes `Machine`, `AssembledPart` et `Part` ont été identifiées comme celle faisant parties du design Composite. Puisqu'une `Part` (Pièce) ne peut pas avoir de "sous-pièce" nous en avons conclu que ce sera une feuille, ou Component, et que `Machine` (Machine) et `AssembledPart` (Pièce assemblée) seront des Composites.
+Les classes `Machine`, `AssembledPart` et `Part` ont été identifiées comme celles faisant partie du design Composite. Puisqu'une `Part` (Pièce) ne peut pas avoir de "sous-pièce" nous en avons conclu que ce sera une feuille, ou Component, et que `Machine` (Machine) et `AssembledPart` (Pièce assemblée) seront des Composites.
 
 ### Réalisation
 
-Pour réaliser ce design pattern nous avons créer une classe abstraite pour le Component appelée `ComponentPart`. Cet interface implémente par défaut les fonctions d'ajout/suppression/accès aux enfants en lançant une erreur. Nous y avons également ajouté toutes les fonctions communes à toutes les classes.
+Pour réaliser ce design pattern nous avons créé une classe abstraite pour le Component appelée `ComponentPart`. Cette interface implémente par défaut les fonctions d'ajout/suppression/accès aux enfants en lançant une erreur. Nous y avons également ajouté toutes les fonctions communes à toutes les classes.
 
 ```java
 public interface PartComponent {
 
-	public default void add(PartComponent partComponent) throws Exception {
-		throw new Exception("Can't add a child in a leaf");
-	}
+ public default void add(PartComponent partComponent) throws Exception {
+  throw new Exception("Can't add a child in a leaf");
+ }
 
-	public default void remove(PartComponent partComponent) throws Exception {
-		throw new Exception("Can't remove in a leaf");
-	}
+ public default void remove(PartComponent partComponent) throws Exception {
+  throw new Exception("Can't remove in a leaf");
+ }
 
-	public default PartComponent getChild(int nChild) throws Exception {
-		throw new Exception("It's a leaf!");
-	}
+ public default PartComponent getChild(int nChild) throws Exception {
+  throw new Exception("It's a leaf!");
+ }
 
-	public double getWeight();
+ public double getWeight();
 
-	public Dimension3D getDimensions();
+ public Dimension3D getDimensions();
 
-	public String toString();
+ public String toString();
 
 }
 ```
 
+<<<<<<< HEAD
 Pour le composite nous avons créer une classe abstraite `CompositePart` qui implémente `Serializabe` et `PartComponent`. Les fonctions d'ajout/suppression/accès d'enfant sont implémentées. Les enfants sont gérés avec une `LinkedList<PartComponent>` et les fonctions communes à `Machine` et `AssembledPart` sont implémentées directement dans la classe abstraite.
+=======
+Pour le composite nous avons créé une classe abstraite `CompositePart` qui implémente `Serializabe` et `PartComponent`. Les fonctions d'ajout/suppression/accès d'enfant sont implémentées. Les enfants sont gérés avec une `LinkedList<PartComponent>` et les fonctions communes à `Machine` et `AssembledPart` sont implémentées directement dans la classe abstraite.
+>>>>>>> Spelling correction
 
 ```java
 public abstract class PartComposite implements Serializable, PartComponent {
 
-	public PartComposite() {
-		parts = new LinkedList<PartComponent>();
-	}
+ public PartComposite() {
+  parts = new LinkedList<PartComponent>();
+ }
 
-	@Override
-	public void add(PartComponent partComponent) throws Exception {
-		this.parts.add(partComponent);
-	}
+ @Override
+ public void add(PartComponent partComponent) throws Exception {
+  this.parts.add(partComponent);
+ }
 
-	@Override
-	public void remove(PartComponent partComponent) throws Exception {
-		this.parts.remove(partComponent);
-	}
+ @Override
+ public void remove(PartComponent partComponent) throws Exception {
+  this.parts.remove(partComponent);
+ }
 
-	@Override
-	public PartComponent getChild(int nChild) throws Exception {
-		if (parts.size() < nChild) {
-			throw new IndexOutOfBoundsException("nChild is too big");
-		}
+ @Override
+ public PartComponent getChild(int nChild) throws Exception {
+  if (parts.size() < nChild) {
+   throw new IndexOutOfBoundsException("nChild is too big");
+  }
 
-		return parts.get(nChild);
-	}
+  return parts.get(nChild);
+ }
 
-	int getNumberOfElements() {
-		return this.parts.size();
-	}
+ int getNumberOfElements() {
+  return this.parts.size();
+ }
 
-	public double getWeight() {
-		double w = 0;
-		for (PartComponent p : parts)
-			w += p.getWeight();
-		return w;
-	}
+ public double getWeight() {
+  double w = 0;
+  for (PartComponent p : parts)
+   w += p.getWeight();
+  return w;
+ }
 
-	protected List<PartComponent> parts;
+ protected List<PartComponent> parts;
 }
 ```
 
@@ -97,7 +101,7 @@ public abstract class PartComposite implements Serializable, PartComponent {
 
 ### Conclusion
 
-En conclusion le pattern composite est très utile lorsque l'on n'a besoin de travailler en polymorphisme et qu'on ne sait pas exactement quelle objet est en cours de traîtement.
+En conclusion le pattern composite est très utile lorsque l'on n'a besoin de travailler en polymorphisme et qu'on ne sait pas exactement quel objet est en cours de traitement.
 
 Cependant il faut quand même faire attention lorsque l'on manipule des enfants qui, eux, implémentent des fonctions qui ne font "rien".
 
@@ -105,11 +109,19 @@ Cependant il faut quand même faire attention lorsque l'on manipule des enfants 
 
 ### Identification
 
+<<<<<<< HEAD
 Nous avons identifié la classe `Config` comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cet objet. Et les autres classes n'auraient pas de sens en singleton.
 
 ### Implémentation
 
 Pour transformer cette classe en singleton voici les changement que nous lui avons apportés :
+=======
+Nous avons identifié la classe "Config" comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cet objet. Et les autres classes n'auraient pas de sens en singleton.
+
+### Implémentation
+
+Pour transformer cette classe en single voici les changements que nous lui avons apportés :
+>>>>>>> Spelling correction
 
 ```java
 // Constructeur privé afin de ne pas pouvoir le créer
@@ -134,7 +146,7 @@ private static Config instance = null;
 private static final String CONFIG_FILE = "config.properties";
 ```
 
-De plus, il n'est pas possible de définir le nom de fichier dans la méthode `getConfig()` car cela n'aurait pas de sens. Une fois la première instance créé avec un certain nom de fichier, le prochain appel ne prendrais pas en compte un nouveau nom de fichier. C'est pourquoi nous avons décidé de mettre un nom de fichier en static. Et également l'application dans son état initial n'a aucun appel au constructeur avec un nom de fichier spécifié
+De plus, il n'est pas possible de définir le nom de fichier dans la méthode `getConfig()` car cela n'aurait pas de sens. Une fois la première instance créée avec un certain nom de fichier, le prochain appel ne prendrait pas en compte un nouveau nom de fichier. C'est pourquoi nous avons décidé de mettre un nom de fichier en static. Et également l'application dans son état initial n'a aucun appel au constructeur avec un nom de fichier spécifié
 
 #### Diagramme de classe
 
