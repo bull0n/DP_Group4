@@ -88,13 +88,15 @@ public abstract class PartComposite implements Serializable, PartComponent {
 }
 ```
 
-#### Diagramme de classe
-![Composite](composite.jpg)
 
 ### Conclusion
 En conclusion le pattern composite est très utile lorsque l'on a besoin de travailler en polymorphisme et qu'on ne sait pas exactement quel objet est en cours de traitement.
 
 Cependant il faut quand même faire attention lorsque l'on manipule des enfants qui, eux, implémentent des fonctions qui ne font "rien".
+
+#### Diagramme de classe
+
+![Composite](composite.jpg)
 
 ## Singleton
 ### Identification
@@ -130,11 +132,14 @@ De plus, il n'est pas possible de définir le nom de fichier dans la méthode `g
 
 Nous aurions pu implémenter le singleton en utilisant un énuméré, mais n'avons pas choisi cette solution, car dans le cas où nous ne faisons pas appel à cette instance, celle-ci est créée pour rien. Ce problème est encore plus flagrant dans le cas ou nous avons plus qu'une instance.
 
-#### Diagramme de classe
-![Singleton](singleton.jpg)
+
 
 ### Conclusion
 Ce pattern nous permet de nous assurer qu'une seule et unique instance sera disponible. De plus, cette façon de faire permet d'avoir accès à l'instance à partir de n'importe quel endroit du code (un genre de variable global en somme).
 C'est d'ailleurs pour cette dernière raison que certains programmeurs ne sont pas très enthousiastes concernant ce patron de conception.
 
 En conclusion, nous pensons que ce patron de conception peut être bien utile. Cependant il faut l'utiliser avec parcimonie et avoir de bonnes raisons pour l'utiliser.
+
+#### Diagramme de classe
+
+![Singleton](singleton.jpg)
