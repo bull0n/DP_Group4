@@ -101,11 +101,11 @@ Cependant il faut quand même faire attention lorsque l'on manipule des enfants 
 
 ### Identification
 
-Nous avons identifié la classe `Config` comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cette objet. Et les autres classes n'auraient pas de sens en singleton.
+Nous avons identifié la classe `Config` comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cet objet. Et les autres classes n'auraient pas de sens en singleton.
 
 ### Implémentation
 
-Pour transformer cette classe en single voici les changement que nous lui avons apportés :
+Pour transformer cette classe en singleton voici les changement que nous lui avons apportés :
 
 ```java
 // Constructeur privé afin de ne pas pouvoir le créer
