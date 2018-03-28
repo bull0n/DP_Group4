@@ -35,7 +35,7 @@ public interface PartComponent {
 }
 ```
 
-Pour le composite nous avons créer une classe abstraite `CompositePart` qui implémente `Serializabe` et `PartComponent`. Les fonctions d'ajout/suppression/accès d'enfant sont implémenté. Les enfants sont gérés avec une `LinkedList<PartComponent>` et les fonctions communes à `Machine` et `AssembledPart` sont implémentées directement dans la classe abstraite.
+Pour le composite nous avons créer une classe abstraite `CompositePart` qui implémente `Serializabe` et `PartComponent`. Les fonctions d'ajout/suppression/accès d'enfant sont implémentées. Les enfants sont gérés avec une `LinkedList<PartComponent>` et les fonctions communes à `Machine` et `AssembledPart` sont implémentées directement dans la classe abstraite.
 
 ```java
 public abstract class PartComposite implements Serializable, PartComponent {
@@ -82,13 +82,13 @@ public abstract class PartComposite implements Serializable, PartComponent {
 
 En conclusion le pattern composite est très utile lorsque l'on n'a besoin de travailler en polymorphisme et qu'on ne sait pas exactement quelle objet est en cours de traîtement.
 
-Cependant il faut quand même faire attention lorsque l'on manipule des enfants qui, eux, implémente des fonctions qui ne font "rien".
+Cependant il faut quand même faire attention lorsque l'on manipule des enfants qui, eux, implémentent des fonctions qui ne font "rien".
 
 ## Singleton
 
 ### Identification
 
-Nous avons identifié la classe "Config" comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cette objet. Et les autres classes n'auraient pas de sens en singleton.
+Nous avons identifié la classe `Config` comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cette objet. Et les autres classes n'auraient pas de sens en singleton.
 
 ### Implémentation
 
