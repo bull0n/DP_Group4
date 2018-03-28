@@ -91,6 +91,10 @@ public abstract class PartComposite implements Serializable, PartComponent {
 }
 ```
 
+#### Diagramme de classe
+
+![Composite](composite.jpg)
+
 ### Conclusion
 
 En conclusion le pattern composite est très utile lorsque l'on n'a besoin de travailler en polymorphisme et qu'on ne sait pas exactement quelle objet est en cours de traîtement.
@@ -131,6 +135,10 @@ private static final String CONFIG_FILE = "config.properties";
 ```
 
 De plus, il n'est pas possible de définir le nom de fichier dans la méthode `getConfig()` car cela n'aurait pas de sens. Une fois la première instance créé avec un certain nom de fichier, le prochain appel ne prendrais pas en compte un nouveau nom de fichier. C'est pourquoi nous avons décidé de mettre un nom de fichier en static. Et également l'application dans son état initial n'a aucun appel au constructeur avec un nom de fichier spécifié
+
+#### Diagramme de classe
+
+![Singleton](singleton.jpg)
 
 ### Conclusion
 
