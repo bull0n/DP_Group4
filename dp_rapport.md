@@ -5,9 +5,9 @@
 
 ## Singleton
 
-Concernant la classe "Config", il a été demandé de la transformer en singleton.
+Nous avons identifié la classe "Config" comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cette objet. Et les autres classes n'auraient pas de sens en singleton.
 
-Voici le code ajouté à la classe que nous avons reçu :
+Pour transformer cette classe en single voici les changement que nous lui avons apportés :
 
 ```java
 // Constructeur privé afin de ne pas pouvoir le créer
@@ -35,6 +35,6 @@ private static final String CONFIG_FILE = "config.properties";
 Ce pattern nous permet de nous assurer qu'une seule et unique instance sera disponible. De plus, cette façon de faire permet d'avoir accès à l'instance à partir de n'importe quel endroit du code (un genre de variable global en somme).
 C'est d'ailleurs pour cette dernière raison que certains programmeurs ne sont pas très enthousiastes concernant ce patron de conception.
 
-De plus, il n'est pas possible de définir le nom de fichier dans la méthode getConfig() car cela n'aurait pas de sens. Une fois la première instance créé avec un certain nom de fichier, le prochain appel ne prendrais pas en compte un nouveau nom de fichier. C'est pourquoi nous avons décidé de mettre un nom de fichier en static.
+De plus, il n'est pas possible de définir le nom de fichier dans la méthode getConfig() car cela n'aurait pas de sens. Une fois la première instance créé avec un certain nom de fichier, le prochain appel ne prendrais pas en compte un nouveau nom de fichier. C'est pourquoi nous avons décidé de mettre un nom de fichier en static. Et également l'application dans son état initial n'a aucun appel au constructeur avec un nom de fichier spécifié
 
 En conclusion, nous pensons que ce patron de conception peut être bien utile. Cependant il faut l'utiliser avec parcimonie et avoir de bonnes raisons pour l'utiliser.
