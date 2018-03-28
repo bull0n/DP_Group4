@@ -48,11 +48,8 @@ public interface PartComponent {
 }
 ```
 
-<<<<<<< HEAD
-Pour le composite nous avons créer une classe abstraite `CompositePart` qui implémente `Serializabe` et `PartComponent`. Les fonctions d'ajout/suppression/accès d'enfant sont implémentées. Les enfants sont gérés avec une `LinkedList<PartComponent>` et les fonctions communes à `Machine` et `AssembledPart` sont implémentées directement dans la classe abstraite.
-=======
 Pour le composite nous avons créé une classe abstraite `CompositePart` qui implémente `Serializabe` et `PartComponent`. Les fonctions d'ajout/suppression/accès d'enfant sont implémentées. Les enfants sont gérés avec une `LinkedList<PartComponent>` et les fonctions communes à `Machine` et `AssembledPart` sont implémentées directement dans la classe abstraite.
->>>>>>> Spelling correction
+
 
 ```java
 public abstract class PartComposite implements Serializable, PartComponent {
@@ -106,22 +103,12 @@ En conclusion le pattern composite est très utile lorsque l'on n'a besoin de tr
 Cependant il faut quand même faire attention lorsque l'on manipule des enfants qui, eux, implémentent des fonctions qui ne font "rien".
 
 ## Singleton
-
 ### Identification
-
-<<<<<<< HEAD
 Nous avons identifié la classe `Config` comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cet objet. Et les autres classes n'auraient pas de sens en singleton.
 
 ### Implémentation
 
-Pour transformer cette classe en singleton voici les changement que nous lui avons apportés :
-=======
-Nous avons identifié la classe "Config" comme la classe à transformer en singleton. Il parait logique que notre application ne puisse avoir qu'une seule instance de cet objet. Et les autres classes n'auraient pas de sens en singleton.
-
-### Implémentation
-
-Pour transformer cette classe en single voici les changements que nous lui avons apportés :
->>>>>>> Spelling correction
+Pour transformer cette classe en singleton, voici les changements que nous lui avons apportés :
 
 ```java
 // Constructeur privé afin de ne pas pouvoir le créer
