@@ -42,7 +42,7 @@ public class PizzaThin implements Pizza_I {
 	
 	@Override
 	public String toString() {
-		return "Think Pizza";
+		return "Thin Pizza";
 	}
 
 }
