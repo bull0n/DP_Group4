@@ -36,11 +36,15 @@ public abstract class Pizza implements Pizza_I {
 	public String getAroma() {
 		return "";
 	}
-	
+
 	@Override
 	public abstract String toString();
-	
+
 	protected int size;
-	protected float price;
+	protected final float price = 1f;
+	
+	public Pizza(int size) {
+		this.size = size;
+	}
 
 }

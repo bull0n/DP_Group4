@@ -12,12 +12,12 @@ public abstract class Decorator implements Pizza_I {
 
 	@Override
 	public abstract float getLactose();
+
 	@Override
 	public abstract boolean isVegetarian();
 
 	@Override
-	public int getSize()
-	{
+	public int getSize() {
 		return this.pizza.getSize();
 	}
 
@@ -26,14 +26,13 @@ public abstract class Decorator implements Pizza_I {
 
 	@Override
 	public abstract String getAroma();
-	
+
 	@Override
 	public abstract String toString();
-	
+
 	public Decorator(Pizza_I pizza) {
 		this.pizza = pizza;
 	}
-	
-	protected Pizza_I pizza;
 
+	protected Pizza_I pizza;
 }
