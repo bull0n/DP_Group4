@@ -6,7 +6,7 @@ public class DecoratorMushroom extends DecoratorIngredient {
 
 	@Override
 	public float getPrice() {
-		return this.pizza.getPrice()+2;
+		return this.pizza.getPrice()+ 0.001f * (float)this.pizza.getSize();
 	}
 
 	@Override
@@ -25,11 +25,6 @@ public class DecoratorMushroom extends DecoratorIngredient {
 	}
 
 	@Override
-	public int getSize() {
-		return this.pizza.getSize();
-	}
-
-	@Override
 	public String getTaste() {
 		return this.pizza.getTaste() + " not good";
 	}
@@ -39,14 +34,14 @@ public class DecoratorMushroom extends DecoratorIngredient {
 		return this.pizza.getAroma() + " savoury";
 	}
 
-	public DecoratorMushroom(Pizza_I pizza) {
-		this.pizza = pizza;
-	}
-
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.toString() + " mushroom";
 	}
+	
+	public DecoratorMushroom(Pizza_I pizza) {
+		super(pizza);
+	}
+
 
 }

@@ -1,6 +1,12 @@
 package tp2.part1.decorator.ingredient;
 
+import tp2.part1.Pizza_I;
+
 public class DecoratorBacon extends DecoratorIngredient {
+
+	public DecoratorBacon(Pizza_I pizza) {
+		super(pizza);
+	}
 
 	@Override
 	public float getPrice() {

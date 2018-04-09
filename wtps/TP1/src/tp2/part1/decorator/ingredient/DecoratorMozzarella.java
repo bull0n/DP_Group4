@@ -1,11 +1,16 @@
 package tp2.part1.decorator.ingredient;
 
+import tp2.part1.Pizza_I;
+
 public class DecoratorMozzarella extends DecoratorIngredient {
+
+	public DecoratorMozzarella(Pizza_I pizza) {
+		super(pizza);
+	}
 
 	@Override
 	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.pizza.getPrice() + (float)this.pizza.getSize() * 0.0042f;
 	}
 
 	@Override
@@ -16,20 +21,13 @@ public class DecoratorMozzarella extends DecoratorIngredient {
 
 	@Override
 	public float getLactose() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.pizza.getLactose() + (float)this.pizza.getSize() * 0.2f;
 	}
 
 	@Override
 	public boolean isVegetarian() {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public int getSize() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	@Override
