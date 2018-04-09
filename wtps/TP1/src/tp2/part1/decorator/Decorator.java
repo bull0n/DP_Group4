@@ -5,45 +5,35 @@ import tp2.part1.Pizza_I;
 public abstract class Decorator implements Pizza_I {
 
 	@Override
-	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+	public abstract float getPrice();
+
+	@Override
+	public abstract boolean isSpicy();
+
+	@Override
+	public abstract float getLactose();
+	@Override
+	public abstract boolean isVegetarian();
+
+	@Override
+	public int getSize()
+	{
+		return this.pizza.getSize();
 	}
 
 	@Override
-	public boolean isSpicy() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public abstract String getTaste();
 
 	@Override
-	public float getLactose() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+	public abstract String getAroma();
+	
 	@Override
-	public boolean isVegetarian() {
-		// TODO Auto-generated method stub
-		return false;
+	public abstract String toString();
+	
+	public Decorator(Pizza_I pizza) {
+		this.pizza = pizza;
 	}
-
-	@Override
-	public int getSize() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String getTaste() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getAroma() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	protected Pizza_I pizza;
 
 }
