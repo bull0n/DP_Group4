@@ -9,4 +9,6 @@ public abstract class DecoratorIngredient extends Decorator {
 	{
 		super(pizza);
 	}
+	
+	protected float price;
 }

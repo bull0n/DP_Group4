@@ -11,6 +11,6 @@ public class PizzaThin extends Pizza {
 	}
 	@Override
 	public String toString() {
-		return "Thin Pizza";
+		return super.toString() + "Thin Pizza";
 	}
 }

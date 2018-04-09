@@ -1,16 +1,21 @@
 package tp2.part1.decorator.ingredient;
 
+import tp2.enums.Aromas;
+import tp2.enums.Tastes;
 import tp2.part1.Pizza_I;
 
 public class DecoratorMozzarella extends DecoratorIngredient {
 
 	public DecoratorMozzarella(Pizza_I pizza) {
 		super(pizza);
+		this.price = 0.0042f;
+		this.aroma = Aromas.SAVOURY;
+		this.taste = Tastes.GOOD;
 	}
 
 	@Override
 	public float getPrice() {
-		return this.pizza.getPrice() + (float)this.pizza.getSize() * 0.0042f;
+		return this.pizza.getPrice() + (float)this.pizza.getSize() * this.price;
 	}
 
 	@Override
@@ -20,7 +25,7 @@ public class DecoratorMozzarella extends DecoratorIngredient {
 
 	@Override
 	public float getLactose() {
-		return this.pizza.getLactose() + (float)this.pizza.getSize() * 0.2f;
+		return this.pizza.getLactose() + (float)this.pizza.getSize() * this.LACTOSE_CONTENT;
 	}
 
 	@Override
@@ -30,17 +35,18 @@ public class DecoratorMozzarella extends DecoratorIngredient {
 
 	@Override
 	public String getTaste() {
-		return this.pizza.getTaste() + " good";
+		return this.pizza.getTaste() + this.taste.toString();
 	}
 
 	@Override
 	public String getAroma() {
-		return this.pizza.getAroma() + " savory";
+		return this.pizza.getAroma() + this.aroma.toString();
 	}
 
 	@Override
 	public String toString() {
 		return this.pizza.toString() + " mozzarella";
 	}
-
+	
+	private final float LACTOSE_CONTENT = 0.2f;
 }

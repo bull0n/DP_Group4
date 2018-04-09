@@ -38,7 +38,10 @@ public abstract class Pizza implements Pizza_I {
 	}
 
 	@Override
-	public abstract String toString();
+	public String toString()
+	{
+		return "diameter : " + this.size + " type : ";
+	}
 
 	protected int size;
 	protected final float price = 1f;
