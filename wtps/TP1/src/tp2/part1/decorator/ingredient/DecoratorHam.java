@@ -10,44 +10,37 @@ public class DecoratorHam extends DecoratorIngredient {
 
 	@Override
 	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.pizza.getPrice() + (float)this.pizza.getSize() * 0.5f;
 	}
 
 	@Override
 	public boolean isSpicy() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.pizza.isSpicy();
 	}
 
 	@Override
 	public float getLactose() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.pizza.getLactose();
 	}
 
 	@Override
 	public boolean isVegetarian() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public String getTaste() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.getTaste() + " good";
 	}
 
 	@Override
 	public String getAroma() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.getAroma() + "savory";
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.toString() + " ham";
 	}
 
 }

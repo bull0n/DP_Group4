@@ -15,8 +15,7 @@ public class DecoratorMozzarella extends DecoratorIngredient {
 
 	@Override
 	public boolean isSpicy() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.pizza.isSpicy();
 	}
 
 	@Override
@@ -26,26 +25,22 @@ public class DecoratorMozzarella extends DecoratorIngredient {
 
 	@Override
 	public boolean isVegetarian() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.pizza.isVegetarian();
 	}
 
 	@Override
 	public String getTaste() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.getTaste() + " good";
 	}
 
 	@Override
 	public String getAroma() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.getAroma() + " savory";
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.toString() + " mozzarella";
 	}
 
 }

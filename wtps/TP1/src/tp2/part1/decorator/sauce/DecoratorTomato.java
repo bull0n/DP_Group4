@@ -6,7 +6,7 @@ public class DecoratorTomato extends DecoratorSauce {
 
 	@Override
 	public float getPrice() {
-		return this.pizza.getPrice() + (float)this.pizza.getSize()*0.05f;
+		return this.pizza.getPrice() + (float)this.pizza.getSize()*DecoratorTomato.PRICE;
 	}
 
 	@Override
@@ -42,5 +42,7 @@ public class DecoratorTomato extends DecoratorSauce {
 	public DecoratorTomato(Pizza_I pizza) {
 		super(pizza);
 	}
+	
+	private final static float PRICE = 0.05f;
 
 }

@@ -4,56 +4,45 @@ import tp2.part1.Pizza_I;
 
 public class DecoratorBacon extends DecoratorIngredient {
 
+
 	public DecoratorBacon(Pizza_I pizza) {
 		super(pizza);
 	}
 
 	@Override
 	public float getPrice() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.pizza.getPrice() + (float)this.pizza.getSize() * 0.7f;
 	}
 
 	@Override
 	public boolean isSpicy() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.pizza.isSpicy();
 	}
 
 	@Override
 	public float getLactose() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.pizza.getLactose();
 	}
 
 	@Override
 	public boolean isVegetarian() {
-		//S'il y a du Bacon, ce n'est plus végétarien, pas besoin d'appeler les autres décorators/parents
 		return false;
 	}
 
 	@Override
-	public int getSize() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public String getTaste() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.getTaste() + " good";
 	}
 
 	@Override
 	public String getAroma() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.getAroma() + " savory";
 	}
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.pizza.toString() + " bacon";
 	}
+
 
 }

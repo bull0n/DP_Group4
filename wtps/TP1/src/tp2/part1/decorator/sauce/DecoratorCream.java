@@ -36,7 +36,7 @@ public class DecoratorCream extends DecoratorSauce {
 
 	@Override
 	public String toString() {
-		return this.pizza.toString() + " Cream";
+		return this.pizza.toString() + " cream";
 	}
 
 	public DecoratorCream(Pizza_I pizza) {
