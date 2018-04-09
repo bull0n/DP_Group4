@@ -2,7 +2,7 @@ package tp2.part1.concrete;
 
 import tp2.part1.Pizza_I;
 
-public class PizzaThick implements Pizza_I {
+public class PizzaThick extends Pizza {
 
 	@Override
 	public float getPrice() {
