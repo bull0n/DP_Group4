@@ -44,6 +44,7 @@ public class PizzaBuilder {
 	
 	//Input
 	int radius;
+	Class<? extends Pizza_I> pizza;
 	Class<? extends DecoratorSauce> sauce;
 	List<Class<? extends DecoratorIngredient>> listIngredient;
 }
