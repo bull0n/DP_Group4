@@ -1,4 +1,4 @@
-package tp2.part1.concrete;
+package tp2.concrete;
 
 public class PizzaThin extends Pizza {
 

@@ -1,21 +1,21 @@
-package tp2.part1.decorator.ingredient;
+package tp2.decorator.sauce;
 
+import tp2.Pizza_I;
 import tp2.enums.Aromas;
 import tp2.enums.Tastes;
-import tp2.part1.Pizza_I;
 
-public class DecoratorHam extends DecoratorIngredient {
+public class DecoratorCream extends DecoratorSauce {
 
-	public DecoratorHam(Pizza_I pizza) {
+	public DecoratorCream(Pizza_I pizza) {
 		super(pizza);
-		this.price = 0.5f;
+		this.taste = Tastes.NOT_GOOD;
 		this.aroma = Aromas.SAVOURY;
 		this.taste = Tastes.GOOD;
 	}
-
+	
 	@Override
 	public float getPrice() {
-		return this.pizza.getPrice() + (float)this.pizza.getSize() * this.price;
+		return this.pizza.getPrice();
 	}
 
 	@Override
@@ -25,12 +25,12 @@ public class DecoratorHam extends DecoratorIngredient {
 
 	@Override
 	public float getLactose() {
-		return this.pizza.getLactose();
+		return this.pizza.getLactose() + (float)this.pizza.getSize() * this.LACTOSE_CONTENT;
 	}
 
 	@Override
 	public boolean isVegetarian() {
-		return false;
+		return this.pizza.isVegetarian();
 	}
 
 	@Override
@@ -45,7 +45,8 @@ public class DecoratorHam extends DecoratorIngredient {
 
 	@Override
 	public String toString() {
-		return this.pizza.toString() + " ham";
+		return this.pizza.toString() + " cream";
 	}
 
+	private final float LACTOSE_CONTENT = 0.1f;
 }

@@ -1,19 +1,23 @@
-package tp2.part1.builder;
+package tp2.builder;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
-import tp2.part1.Pizza_I;
-import tp2.part1.concrete.Pizza;
-import tp2.part1.decorator.ingredient.DecoratorIngredient;
-import tp2.part1.decorator.sauce.DecoratorSauce;
+import tp2.Pizza_I;
+import tp2.concrete.Pizza;
+import tp2.decorator.ingredient.DecoratorIngredient;
+import tp2.decorator.sauce.DecoratorSauce;
 
 public class PizzaBuilder {
 	
-	public PizzaBuilder(Class<? extends Pizza_I> c) throws InstantiationException, IllegalAccessException {
-		pizza = c;
+	public PizzaBuilder(Class<? extends Pizza_I> pizza){
+		this.pizza = pizza;
+		this.listIngredient = new ArrayList<Class<? extends DecoratorIngredient>>();
 	}
 
 	public <SauceClass extends DecoratorSauce> void sauce(Class<SauceClass> sauce) {
@@ -35,16 +39,15 @@ public class PizzaBuilder {
 		Pizza_I newPizza = null;
 		try {
 			//Création de la pizza
-			newPizza = (Pizza_I)pizza.getDeclaredConstructor(pizza).newInstance(this.radius);
+			newPizza = (Pizza_I)pizza.getConstructor(int.class).newInstance(this.radius);
 			
 			//Ajout de la sauce
-			newPizza = (Pizza_I)sauce.getDeclaredConstructor(sauce).newInstance(newPizza);
+			newPizza = (Pizza_I)sauce.getConstructor(Pizza_I.class).newInstance(newPizza);
 			
 			//Ajout des ingrédients
 			for(Class<? extends DecoratorIngredient> ingredient : listIngredient) {
-				newPizza = (Pizza_I)ingredient.getDeclaredConstructor(ingredient).newInstance(newPizza);
+				newPizza = (Pizza_I)ingredient.getConstructor(Pizza_I.class).newInstance(newPizza);
 			}
-			
 			
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e1) {

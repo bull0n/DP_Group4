@@ -1,14 +1,14 @@
-package tp2.part1.decorator.ingredient;
+package tp2.decorator.ingredient;
 
+import tp2.Pizza_I;
 import tp2.enums.Aromas;
 import tp2.enums.Tastes;
-import tp2.part1.Pizza_I;
 
-public class DecoratorSpicySalami extends DecoratorIngredient {
+public class DecoratorOrigan extends DecoratorIngredient {
 	
-	public DecoratorSpicySalami(Pizza_I pizza) {
+	public DecoratorOrigan(Pizza_I pizza) {
 		super(pizza);
-		this.taste = Tastes.NOT_GOOD;
+		this.taste = Tastes.GOOD;
 		this.aroma = Aromas.SAVOURY;
 		this.price = 0.001f;
 	}
@@ -20,7 +20,7 @@ public class DecoratorSpicySalami extends DecoratorIngredient {
 
 	@Override
 	public boolean isSpicy() {
-		return true;
+		return this.pizza.isSpicy();
 	}
 
 	@Override

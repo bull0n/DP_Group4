@@ -1,8 +1,8 @@
-package tp2.part1.decorator.ingredient;
+package tp2.decorator.ingredient;
 
+import tp2.Pizza_I;
 import tp2.enums.Aromas;
 import tp2.enums.Tastes;
-import tp2.part1.Pizza_I;
 
 public class DecoratorBacon extends DecoratorIngredient {
 

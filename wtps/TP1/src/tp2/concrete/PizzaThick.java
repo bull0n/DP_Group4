@@ -1,4 +1,4 @@
-package tp2.part1.concrete;
+package tp2.concrete;
 
 public class PizzaThick extends Pizza {
 	public PizzaThick(int size) {

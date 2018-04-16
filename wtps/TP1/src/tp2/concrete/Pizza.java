@@ -1,6 +1,6 @@
-package tp2.part1.concrete;
+package tp2.concrete;
 
-import tp2.part1.Pizza_I;
+import tp2.Pizza_I;
 
 public abstract class Pizza implements Pizza_I {
 

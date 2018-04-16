@@ -1,25 +1,26 @@
-package tp2.part1.decorator.sauce;
+package tp2.decorator.ingredient;
 
+import tp2.Pizza_I;
 import tp2.enums.Aromas;
 import tp2.enums.Tastes;
-import tp2.part1.Pizza_I;
 
-public class DecoratorTomato extends DecoratorSauce {
+public class DecoratorSpicySalami extends DecoratorIngredient {
 	
-	public DecoratorTomato(Pizza_I pizza) {
+	public DecoratorSpicySalami(Pizza_I pizza) {
 		super(pizza);
+		this.taste = Tastes.NOT_GOOD;
 		this.aroma = Aromas.SAVOURY;
-		this.taste = Tastes.GOOD;
+		this.price = 0.001f;
 	}
 
 	@Override
 	public float getPrice() {
-		return this.pizza.getPrice();
+		return this.pizza.getPrice()+ this.price * (float)this.pizza.getSize();
 	}
 
 	@Override
 	public boolean isSpicy() {
-		return this.pizza.isSpicy();
+		return true;
 	}
 
 	@Override
@@ -44,6 +45,8 @@ public class DecoratorTomato extends DecoratorSauce {
 
 	@Override
 	public String toString() {
-		return this.pizza.toString() + " tomato sauce";
+		return this.pizza.toString() + " mushroom";
 	}
+
+	
 }

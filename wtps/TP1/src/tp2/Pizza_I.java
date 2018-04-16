@@ -1,4 +1,4 @@
-package tp2.part1;
+package tp2;
 
 public interface Pizza_I {
 	
