@@ -15,11 +15,14 @@ import tp2.decorator.sauce.DecoratorSauce;
 
 public class PizzaBuilder {
 	
-	public PizzaBuilder(Class<? extends Pizza_I> pizza){
-		this.pizza = pizza;
+	public PizzaBuilder(){
 		this.listIngredient = new ArrayList<Class<? extends DecoratorIngredient>>();
 	}
-
+	
+	public void setThickness(Class<? extends Pizza_I> pizza) {
+		this.pizza = pizza;
+	}
+	
 	public <SauceClass extends DecoratorSauce> void sauce(Class<SauceClass> sauce) {
 		this.sauce = sauce;
 	}
