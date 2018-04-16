@@ -6,21 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tp2.part1.Pizza_I;
+import tp2.part1.concrete.Pizza;
 import tp2.part1.decorator.ingredient.DecoratorIngredient;
 import tp2.part1.decorator.sauce.DecoratorSauce;
 
 public class PizzaBuilder {
 	
 	public PizzaBuilder(Class<? extends Pizza_I> c) throws InstantiationException, IllegalAccessException {
-		listIngredient = new ArrayList<Class<? extends DecoratorIngredient>>();
-		pizza = (Pizza_I) c.newInstance();
+		pizza = c;
 	}
 
 	public <SauceClass extends DecoratorSauce> void sauce(Class<SauceClass> sauce) {
 		this.sauce = sauce;
 	}
 
-	public void addIngredient(Class<DecoratorIngredient> ingredient) {
+	public void addIngredient(Class<? extends DecoratorIngredient> ingredient) {
 		if(!listIngredient.contains(ingredient)) {
 			this.listIngredient.add(ingredient);
 		}
@@ -31,15 +31,27 @@ public class PizzaBuilder {
 	}
 
 	public Pizza_I getPizza() {
-		Pizza_I pizza = new Pizza
-		pizza.setSize();
 		//Build
+		Pizza_I newPizza = null;
 		try {
-			pizza = (Pizza_I)sauce.getDeclaredConstructor(sauce).newInstance(pizza);
+			//Création de la pizza
+			newPizza = (Pizza_I)pizza.getDeclaredConstructor(pizza).newInstance(this.radius);
+			
+			//Ajout de la sauce
+			newPizza = (Pizza_I)sauce.getDeclaredConstructor(sauce).newInstance(newPizza);
+			
+			//Ajout des ingrédients
+			for(Class<? extends DecoratorIngredient> ingredient : listIngredient) {
+				newPizza = (Pizza_I)ingredient.getDeclaredConstructor(ingredient).newInstance(newPizza);
+			}
+			
+			
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
-				| NoSuchMethodException | SecurityException e) {
-			e.printStackTrace();
+				| NoSuchMethodException | SecurityException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
+		return newPizza;
 	}
 	
 	//Input
