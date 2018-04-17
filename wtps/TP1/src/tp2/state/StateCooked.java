@@ -7,7 +7,7 @@ public class StateCooked implements State_I {
 
 	@Override
 	public float getLactose(StatePizza pizza) {
-		return LACTOSE/2;
+		return pizza.getLactose()/2;
 	}
 
 	@Override
@@ -36,7 +36,6 @@ public class StateCooked implements State_I {
 		pizza.setState(new StateOvercooked());
 	}
 	
-	private static float LACTOSE = 0.0f;
 	private static String STATE = "state : cooked";
 	private static String EXCEPTION_MSG = "Already cooked, can not be prepared...";
 }
