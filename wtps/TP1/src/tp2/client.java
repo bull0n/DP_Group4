@@ -11,8 +11,6 @@ import tp2.decorator.ingredient.DecoratorOrigan;
 import tp2.decorator.ingredient.DecoratorPepper;
 import tp2.decorator.ingredient.DecoratorSpicySalami;
 import tp2.decorator.sauce.DecoratorTomato;
-import tp2.state.StatePizza;
-import tp2.state.StatePizzaThick;
 
 public class client {
 
@@ -70,7 +68,29 @@ public class client {
 	}
 	
 	public static void part3() {
-
+		// Margherita : sauce tomate, mozzarella, and origan			
+		PizzaBuilder margueritaBuilder = new PizzaBuilder();
+		margueritaBuilder.setThickness(PizzaThick.class);
+		margueritaBuilder.setSize(45);
+		margueritaBuilder.sauce(DecoratorTomato.class);
+		margueritaBuilder.addIngredient(DecoratorMozzarella.class);
+		margueritaBuilder.addIngredient(DecoratorOrigan.class);
+		
+		Pizza_I marguerita = margueritaBuilder.getPizza();
+		
+		System.out.println(marguerita);
+		System.out.println(marguerita.getLactose());
+		System.out.println(marguerita.getAroma());
+		System.out.println(marguerita.getTaste());
+		
+		try {
+			marguerita.prepare();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(marguerita);
 	}
 
 }

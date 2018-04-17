@@ -1,5 +1,7 @@
 package tp2.state;
 
+/*
+
 public class StatePizzaThick extends StatePizza {
 	public StatePizzaThick(int size) {
 		super(size);
@@ -18,3 +20,4 @@ public class StatePizzaThick extends StatePizza {
 	private final float price = 1.5f;
 
 }
+*/

@@ -35,6 +35,17 @@ public abstract class Decorator implements Pizza_I {
 
 	@Override
 	public abstract String toString();
+	
+	// State
+	@Override
+	public void prepare() throws Exception{
+		this.pizza.prepare();
+	}
+	
+	@Override
+	public void cook() throws Exception{
+		this.pizza.cook();
+	}
 
 	protected Pizza_I pizza;
 	protected Aromas aroma;

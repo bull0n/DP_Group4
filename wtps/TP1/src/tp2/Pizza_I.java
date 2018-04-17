@@ -1,5 +1,7 @@
 package tp2;
 
+import tp2.state.State_I;
+
 public interface Pizza_I {
 	
 	public float getPrice();
@@ -17,5 +19,11 @@ public interface Pizza_I {
 	public String getAroma();
 	
 	public String toString();
+	
+	// State
+	
+	public void prepare() throws Exception;
+	
+	public void cook() throws Exception;
 	
 }

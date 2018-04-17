@@ -1,5 +1,6 @@
 package tp2.state;
 
+/*
 import tp2.concrete.Pizza;
 
 public abstract class StatePizza extends Pizza {
@@ -46,3 +47,5 @@ public abstract class StatePizza extends Pizza {
 	
 	private State_I state;
 }
+
+*/

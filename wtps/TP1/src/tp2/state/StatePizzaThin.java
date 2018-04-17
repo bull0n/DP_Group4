@@ -1,5 +1,6 @@
 package tp2.state;
 
+/*
 public class StatePizzaThin extends StatePizza {
 
 	public StatePizzaThin(int size) {
@@ -14,3 +15,5 @@ public class StatePizzaThin extends StatePizza {
 		return super.toString() + "Thin Pizza";
 	}
 }
+*/
+
