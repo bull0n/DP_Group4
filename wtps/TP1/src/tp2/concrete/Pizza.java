@@ -31,12 +31,12 @@ public abstract class Pizza implements Pizza_I {
 
 	@Override
 	public String getTaste() {
-		return state.getTaste(this);
+		return "TASTE Pizza : " + state.getTaste(this) + " | Ingredients : ";
 	}
 
 	@Override
 	public String getAroma() {
-		return state.getAroma(this);
+		return "AROMA Pizza : " + state.getAroma(this) + " | Ingredients : ";
 	}
 
 	@Override

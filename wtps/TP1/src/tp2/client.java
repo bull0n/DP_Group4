@@ -91,6 +91,15 @@ public class client {
 		}
 		
 		System.out.println(marguerita);
+		
+		try {
+			marguerita.cook();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(marguerita);
 	}
 
 }
