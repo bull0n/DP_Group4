@@ -18,8 +18,8 @@ public class client {
 
 	public static void main(String[] args) {
 
-		part1And2();
-		//part3();
+		//part1And2();
+		part3();
 	}
 	
 	public static void part1And2() {
@@ -70,14 +70,7 @@ public class client {
 	}
 	
 	public static void part3() {
-		// Margherita : sauce tomate, mozzarella, and origan			
-		PizzaBuilder margueritaBuilder = new PizzaBuilder();
-		margueritaBuilder.setSize(45);
-		margueritaBuilder.sauce(DecoratorTomato.class);
-		margueritaBuilder.addIngredient(DecoratorMozzarella.class);
-		margueritaBuilder.addIngredient(DecoratorOrigan.class);
-		
-		Pizza_I marguerita = margueritaBuilder.getPizza();
+
 	}
 
 }
