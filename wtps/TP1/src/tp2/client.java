@@ -11,10 +11,18 @@ import tp2.decorator.ingredient.DecoratorOrigan;
 import tp2.decorator.ingredient.DecoratorPepper;
 import tp2.decorator.ingredient.DecoratorSpicySalami;
 import tp2.decorator.sauce.DecoratorTomato;
+import tp2.state.StatePizza;
+import tp2.state.StatePizzaThick;
 
 public class client {
 
 	public static void main(String[] args) {
+
+		part1And2();
+		//part3();
+	}
+	
+	public static void part1And2() {
 		// Margherita : sauce tomate, mozzarella, and origan			
 		PizzaBuilder margueritaBuilder = new PizzaBuilder();
 		margueritaBuilder.setSize(45);
@@ -59,7 +67,17 @@ public class client {
 		System.out.println("It's for vegeterian! It's " + Mushroom.isVegetarian());
 		System.out.println("Pizza & Ingredients : " + Mushroom);
 		System.out.println("Price : " + Mushroom.getPrice() + " CHF");
+	}
+	
+	public static void part3() {
+		// Margherita : sauce tomate, mozzarella, and origan			
+		PizzaBuilder margueritaBuilder = new PizzaBuilder();
+		margueritaBuilder.setSize(45);
+		margueritaBuilder.sauce(DecoratorTomato.class);
+		margueritaBuilder.addIngredient(DecoratorMozzarella.class);
+		margueritaBuilder.addIngredient(DecoratorOrigan.class);
 		
+		Pizza_I marguerita = margueritaBuilder.getPizza();
 	}
 
 }
