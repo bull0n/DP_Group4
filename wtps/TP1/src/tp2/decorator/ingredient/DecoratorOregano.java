@@ -4,9 +4,9 @@ import tp2.Pizza_I;
 import tp2.enums.Aromas;
 import tp2.enums.Tastes;
 
-public class DecoratorOrigan extends DecoratorIngredient {
+public class DecoratorOregano extends DecoratorIngredient {
 	
-	public DecoratorOrigan(Pizza_I pizza) {
+	public DecoratorOregano(Pizza_I pizza) {
 		super(pizza);
 		this.taste = Tastes.GOOD;
 		this.aroma = Aromas.SAVOURY;
@@ -47,6 +47,4 @@ public class DecoratorOrigan extends DecoratorIngredient {
 	public String toString() {
 		return this.pizza.toString() + " mushroom";
 	}
-
-	
 }

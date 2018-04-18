@@ -13,11 +13,6 @@ public class DecoratorTomato extends DecoratorSauce {
 	}
 
 	@Override
-	public float getPrice() {
-		return this.pizza.getPrice();
-	}
-
-	@Override
 	public boolean isSpicy() {
 		return this.pizza.isSpicy();
 	}
@@ -25,11 +20,6 @@ public class DecoratorTomato extends DecoratorSauce {
 	@Override
 	public float getLactose() throws Exception {
 		return this.pizza.getLactose();
-	}
-
-	@Override
-	public boolean isVegetarian() {
-		return this.pizza.isVegetarian();
 	}
 
 	@Override

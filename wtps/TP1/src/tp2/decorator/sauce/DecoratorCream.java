@@ -12,11 +12,6 @@ public class DecoratorCream extends DecoratorSauce {
 		this.aroma = Aromas.SAVOURY;
 		this.taste = Tastes.GOOD;
 	}
-	
-	@Override
-	public float getPrice() {
-		return this.pizza.getPrice();
-	}
 
 	@Override
 	public boolean isSpicy() {
@@ -26,11 +21,6 @@ public class DecoratorCream extends DecoratorSauce {
 	@Override
 	public float getLactose() throws Exception {
 		return this.pizza.getLactose() + (float)this.pizza.getSize() * this.LACTOSE_CONTENT;
-	}
-
-	@Override
-	public boolean isVegetarian() {
-		return this.pizza.isVegetarian();
 	}
 
 	@Override

@@ -19,7 +19,7 @@ public class PizzaBuilder {
 		this.listIngredient = new ArrayList<Class<? extends DecoratorIngredient>>();
 	}
 	
-	public void setThickness(Class<? extends Pizza_I> pizza) {
+	public void setThickness(Class<? extends Pizza> pizza) {
 		this.pizza = pizza;
 	}
 	

@@ -7,4 +7,14 @@ public abstract class DecoratorSauce extends Decorator {
 	public DecoratorSauce(Pizza_I pizza) {
 		super(pizza);
 	}
+	
+	@Override
+	public float getPrice() {
+		return this.pizza.getPrice();
+	}
+	
+	@Override
+	public boolean isVegetarian() {
+		return this.pizza.isVegetarian();
+	}
 }

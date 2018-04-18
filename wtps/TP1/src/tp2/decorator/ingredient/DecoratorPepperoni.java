@@ -4,9 +4,9 @@ import tp2.Pizza_I;
 import tp2.enums.Aromas;
 import tp2.enums.Tastes;
 
-public class DecoratorSpicySalami extends DecoratorIngredient {
+public class DecoratorPepperoni extends DecoratorIngredient {
 	
-	public DecoratorSpicySalami(Pizza_I pizza) {
+	public DecoratorPepperoni(Pizza_I pizza) {
 		super(pizza);
 		this.taste = Tastes.NOT_GOOD;
 		this.aroma = Aromas.SAVOURY;

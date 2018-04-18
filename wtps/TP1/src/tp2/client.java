@@ -7,9 +7,9 @@ import tp2.decorator.ingredient.DecoratorBacon;
 import tp2.decorator.ingredient.DecoratorHam;
 import tp2.decorator.ingredient.DecoratorMozzarella;
 import tp2.decorator.ingredient.DecoratorMushroom;
-import tp2.decorator.ingredient.DecoratorOrigan;
+import tp2.decorator.ingredient.DecoratorOregano;
 import tp2.decorator.ingredient.DecoratorPepper;
-import tp2.decorator.ingredient.DecoratorSpicySalami;
+import tp2.decorator.ingredient.DecoratorPepperoni;
 import tp2.decorator.sauce.DecoratorTomato;
 import tp2.state.PizzaContext;
 
@@ -29,7 +29,7 @@ public class client {
 			margueritaBuilder.setSize(45);
 			margueritaBuilder.sauce(DecoratorTomato.class);
 			margueritaBuilder.addIngredient(DecoratorMozzarella.class);
-			margueritaBuilder.addIngredient(DecoratorOrigan.class);
+			margueritaBuilder.addIngredient(DecoratorOregano.class);
 	
 			// Profunghi : sauce tomate, mozzarella, jambon, champignon
 			PizzaBuilder profunghiBuilder = new PizzaBuilder();
@@ -46,7 +46,7 @@ public class client {
 			diavolaBuilder.setSize(18);
 			diavolaBuilder.sauce(DecoratorTomato.class);
 			diavolaBuilder.addIngredient(DecoratorMozzarella.class);
-			diavolaBuilder.addIngredient(DecoratorSpicySalami.class);
+			diavolaBuilder.addIngredient(DecoratorPepperoni.class);
 			diavolaBuilder.addIngredient(DecoratorPepper.class);
 	
 			Pizza_I marguerita = margueritaBuilder.getPizza();
@@ -82,7 +82,7 @@ public class client {
 		margueritaBuilder.setSize(45);
 		margueritaBuilder.sauce(DecoratorTomato.class);
 		margueritaBuilder.addIngredient(DecoratorMozzarella.class);
-		margueritaBuilder.addIngredient(DecoratorOrigan.class);
+		margueritaBuilder.addIngredient(DecoratorOregano.class);
 		
 		Pizza_I marguerita = margueritaBuilder.getPizza();
 		
