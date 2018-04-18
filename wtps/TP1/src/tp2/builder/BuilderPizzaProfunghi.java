@@ -9,6 +9,7 @@ import tp2.decorator.sauce.DecoratorTomato;
 public class BuilderPizzaProfunghi extends BuilderPizza_A {
 
 	public BuilderPizzaProfunghi() {
+		super();
 		this.setThickness(PizzaThin.class);
 		this.setSize(20);
 		this.sauce(DecoratorTomato.class);
