@@ -20,7 +20,7 @@ Pour ce Travail Pratique, il a été demandé de développé un programme de cr�
 
 Toutes les classes implémentent l'interface `Pizza_I`. Et les 3 patterns sont implémentés dans leur package respectif.
 
-![Singleton](pizza_i.png)
+![Pizza_I](pizza_i.png)
 
 Toutes les classes propres aux patterns on été préfixées par le nom de celui-ci afin d'identifier plus facilement quel pattern est utilisé.
 
@@ -34,13 +34,13 @@ Les decorators représentent les ingrédients et la sauce sur la pizza. Nous avo
 
 Les décorateurs ont également un énuméré `Aromas` et `Tastes`, qui va permettre de concatener facilement les différents types de goût et arômes de chaque ingrédient/sauce.
 
-SCHEMA INGREDIENT, SAUCE ET DECORATOR
-
 #### Ingrédients
 
 Ensuite nous avons ajouté plusieurs ingrédients qui héritent de `DecoratorIngredient`, `DecoratorBacon`, `DecoratorHam`, `DecoratorMozzarella`, `DecoratorOregano`, `DecoratorPepper` et `DecoratorPepperoni`. Tous ces ingrédients redéfinissent les fonctions de l'interface `Pizza_I` et auront chacun leur propre prix.
 
-SCHEMA INGREDIENT
+
+![Decorator](decoratorglobal.png)
+
 
 ##### Exemple de code
 
@@ -97,8 +97,6 @@ public String toString() {
 
 Les sauces, `DecoratorCream` et `DecoratorTomato` implémentent `DecoratorSauce`, comme énoncé précédemment. Elles n'ont pas de prix et donc la fonction de renvoi de prix est directement implémenté dans la fonction `DecoratorSauce`.
 
-SCHEMA SAUCE
-
 ##### Exemple de code
 
 ```java
@@ -136,9 +134,10 @@ public class DecoratorTomato extends DecoratorSauce {
 	}
 }
 ```
-
-### Conclusion
 #### Diagramme de classe
+
+![Decorator Ingredients et sauce](decoratoringredients.png)
+Pour des raisons de lisibilité, tous les decorator `DecoratorIngredient` ne sont pas représentés
 
 ## Builder
 Le patron de conception `Builder` permet de créer une variété d'objets complexes à partir d'un objet source.
