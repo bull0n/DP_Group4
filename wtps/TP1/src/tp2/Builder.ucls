@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="tp2.builder.BuilderPizza" project="TP1" 
-    file="/TP1/src/tp2/builder/BuilderPizza.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="306" x="74" y="79"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="tp2.decorator.Decorator" project="TP1" 
+  <class id="1" language="java" name="tp2.decorator.Decorator" project="TP1" 
     file="/TP1/src/tp2/decorator/Decorator.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="279" width="139" x="659" y="86"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -19,7 +10,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="tp2.decorator.ingredient.DecoratorPepperoni" project="TP1" 
+  <class id="2" language="java" name="tp2.decorator.ingredient.DecoratorPepperoni" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorPepperoni.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="164" x="770" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -28,7 +19,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="tp2.decorator.sauce.DecoratorSauce" project="TP1" 
+  <class id="3" language="java" name="tp2.decorator.sauce.DecoratorSauce" project="TP1" 
     file="/TP1/src/tp2/decorator/sauce/DecoratorSauce.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="117" width="147" x="484" y="420"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -37,7 +28,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="tp2.decorator.sauce.DecoratorCream" project="TP1" 
+  <class id="4" language="java" name="tp2.decorator.sauce.DecoratorCream" project="TP1" 
     file="/TP1/src/tp2/decorator/sauce/DecoratorCream.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="189" width="153" x="387" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -46,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="tp2.decorator.ingredient.DecoratorHam" project="TP1" 
+  <class id="5" language="java" name="tp2.decorator.ingredient.DecoratorHam" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorHam.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="137" x="974" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -55,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="tp2.decorator.ingredient.DecoratorPepper" project="TP1" 
+  <class id="6" language="java" name="tp2.decorator.ingredient.DecoratorPepper" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorPepper.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="150" x="1151" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -64,7 +55,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="tp2.decorator.ingredient.DecoratorMozzarella" project="TP1" 
+  <class id="7" language="java" name="tp2.decorator.ingredient.DecoratorMozzarella" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorMozzarella.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="225" width="168" x="1341" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="tp2.decorator.ingredient.DecoratorMushroom" project="TP1" 
+  <class id="8" language="java" name="tp2.decorator.ingredient.DecoratorMushroom" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorMushroom.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="166" x="1549" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,7 +73,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="tp2.decorator.sauce.DecoratorTomato" project="TP1" 
+  <class id="9" language="java" name="tp2.decorator.sauce.DecoratorTomato" project="TP1" 
     file="/TP1/src/tp2/decorator/sauce/DecoratorTomato.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="171" width="150" x="580" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -91,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="tp2.decorator.ingredient.DecoratorBacon" project="TP1" 
+  <class id="10" language="java" name="tp2.decorator.ingredient.DecoratorBacon" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorBacon.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="147" x="1755" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -100,7 +91,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="tp2.decorator.ingredient.DecoratorIngredient" project="TP1" 
+  <class id="11" language="java" name="tp2.decorator.ingredient.DecoratorIngredient" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorIngredient.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="99" width="163" x="1341" y="420"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -109,7 +100,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="tp2.decorator.ingredient.DecoratorOregano" project="TP1" 
+  <class id="12" language="java" name="tp2.decorator.ingredient.DecoratorOregano" project="TP1" 
     file="/TP1/src/tp2/decorator/ingredient/DecoratorOregano.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="207" width="158" x="1942" y="577"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -118,7 +109,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="14" language="java" name="tp2.enums.Aromas" project="TP1" file="/TP1/src/tp2/enums/Aromas.java" 
+  <enumeration id="13" language="java" name="tp2.enums.Aromas" project="TP1" file="/TP1/src/tp2/enums/Aromas.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="95" y="541"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -127,7 +118,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <enumeration id="15" language="java" name="tp2.enums.Tastes" project="TP1" file="/TP1/src/tp2/enums/Tastes.java" 
+  <enumeration id="14" language="java" name="tp2.enums.Tastes" project="TP1" file="/TP1/src/tp2/enums/Tastes.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="268" y="523"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -136,65 +127,65 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
+  <generalization id="15">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
   <generalization id="16">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="12"/>  
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
   </generalization>  
-  <generalization id="17">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="2"/>  
+  <association id="17">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="18" name="aroma"/>      
+      <multiplicity id="19" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="1"/>  
   </generalization>  
-  <association id="18">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="19" name="aroma"/>      
-      <multiplicity id="20" minimum="0" maximum="1"/>    
+  <generalization id="21">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="23">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <association id="24">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="25" name="taste"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <generalization id="22">    
+  <generalization id="27">    
     <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
+    <end type="TARGET" refId="11"/>  
   </generalization>  
-  <generalization id="23">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="24">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <association id="25">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="26" name="taste"/>      
-      <multiplicity id="27" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <generalization id="28">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="12"/>  
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="11"/>  
   </generalization>  
   <generalization id="29">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="12"/>  
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="11"/>  
   </generalization>  
   <generalization id="30">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="12"/>  
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="11"/>  
   </generalization>  
   <generalization id="31">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="12"/>  
-  </generalization>  
-  <generalization id="32">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="4"/>  
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="3"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

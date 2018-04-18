@@ -141,8 +141,7 @@ public class DecoratorTomato extends DecoratorSauce {
 #### Diagramme de classe
 
 ## Builder
-
-Le patron de conception `Builder` permet de créer des objets complexes à partir d'autres objets.
+Le patron de conception `Builder` permet de créer une variété d'objets complexes à partir d'un objet source.
 
 ### Réalisation
 ```java

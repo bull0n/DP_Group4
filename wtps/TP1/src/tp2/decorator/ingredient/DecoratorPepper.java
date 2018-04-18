@@ -45,7 +45,7 @@ public class DecoratorPepper extends DecoratorIngredient {
 
 	@Override
 	public String toString() {
-		return this.pizza.toString() + " mushroom";
+		return this.pizza.toString() + " pepper";
 	}
 
 	
