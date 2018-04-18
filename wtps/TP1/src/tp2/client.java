@@ -102,16 +102,20 @@ public class client {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		//printPizzaContext(pizzaContext);
+		printPizzaContext(pizzaContext);
 		
 	}
 	
 	public static void printPizzaContext(StatePizzaContext pizzaContext)
 	{
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println(pizzaContext.getState());
+		System.out.println("---------------------------------------------------------------------");
 		System.out.println(pizzaContext);
-		//System.out.println(pizzaContext.getLactose()); stackoverflow
-		//System.out.println(pizzaContext.getTaste());
-		//System.out.println(pizzaContext.getAroma());
+		System.out.println(pizzaContext.getLactose());
+		System.out.println(pizzaContext.getTaste());
+		System.out.println(pizzaContext.getAroma());
+		System.out.println("---------------------------------------------------------------------");
 	}
 
 }

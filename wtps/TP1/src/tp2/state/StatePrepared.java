@@ -7,7 +7,7 @@ public class StatePrepared implements State_I{
 
 	@Override
 	public float getLactose(StatePizzaContext pizzaContext) {
-		return LACTOSE;
+		return pizzaContext.getPizza().getLactose();
 	}
 
 	@Override
@@ -36,6 +36,5 @@ public class StatePrepared implements State_I{
 		pizzaContext.setState(new StateCooked());
 	}
 	
-	private static float LACTOSE = 0.0f;
 	private static String STATE = "state : prepared";
 }

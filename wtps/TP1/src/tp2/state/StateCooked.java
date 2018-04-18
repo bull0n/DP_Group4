@@ -6,17 +6,17 @@ public class StateCooked implements State_I {
 
 	@Override
 	public float getLactose(StatePizzaContext pizzaContext) {
-		return pizzaContext.getLactose()/2;
+		return LACTOSE * pizzaContext.getPizza().getLactose();
 	}
 
 	@Override
 	public String getTaste(StatePizzaContext pizzaContext) {
-		return Tastes.GOOD.name();
+		return pizzaContext.getPizza().getTaste();
 	}
 
 	@Override
 	public String getAroma(StatePizzaContext pizzaContext) {
-		return pizzaContext.getAroma();
+		return pizzaContext.getPizza().getAroma();
 	}
 
 	@Override
@@ -35,6 +35,7 @@ public class StateCooked implements State_I {
 		pizzaContext.setState(new StateOvercooked());
 	}
 	
+	private static float LACTOSE = 0.5f;
 	private static String STATE = "state : cooked";
 	private static String EXCEPTION_MSG = "Already cooked, can not be prepared...";
 }
