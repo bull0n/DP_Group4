@@ -142,15 +142,18 @@ public class DecoratorTomato extends DecoratorSauce {
 
 ## Builder
 
-Le patron de conception
-### Identification
-### Implémentation
+Le patron de conception `Builder` permet de créer des objets complexes à partir d'autres objets.
+
+### Réalisation
 ```java
 code here
 ```
+#### Exemple de code
+
+#### Diagramme de classe
 
 ### Conclusion
-#### Diagramme de classe
+
 
 ## State
 
@@ -164,13 +167,13 @@ Pour mettre en place de ce patron, nous avons créé une interface `State_I` qui
 - `StateCooked` : état cuit
 - `StateOvercooked` : état râté
 
-Tous ces états effectue des tâches différentes. La classe "PizzaContext" permet d'adapter le comportement selon l'état du moment de la pizza.
+Tous ces états effectue des tâches différentes. La classe `PizzaContext` permet d'adapter le comportement selon l'état du moment de la pizza.
 
 #### Diagramme de class
 
 ![StatePattern](StatePattern.jpg)
 
-#### Code
+#### Exemple de code
 
 ```java
 // Interface d'état
