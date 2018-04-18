@@ -17,13 +17,14 @@ public class client {
 
 	public static void main(String[] args) {
 
-		//part1And2();
+		part1And2();
 		part3();
 	}
 	
 	public static void part1And2() {
 		// Margherita : sauce tomate, mozzarella, and origan			
 		PizzaBuilder margueritaBuilder = new PizzaBuilder();
+		margueritaBuilder.setThickness(PizzaThick.class);
 		margueritaBuilder.setSize(45);
 		margueritaBuilder.sauce(DecoratorTomato.class);
 		margueritaBuilder.addIngredient(DecoratorMozzarella.class);
@@ -31,6 +32,7 @@ public class client {
 
 		// Profunghi : sauce tomate, mozzarella, jambon, champignon
 		PizzaBuilder profunghiBuilder = new PizzaBuilder();
+		profunghiBuilder.setThickness(PizzaThin.class);
 		profunghiBuilder.setSize(20);
 		profunghiBuilder.sauce(DecoratorTomato.class);
 		profunghiBuilder.addIngredient(DecoratorMozzarella.class);
@@ -39,6 +41,7 @@ public class client {
 		
 		// Diavola : sauce tomate, mozzarella, salami piquant, piment
 		PizzaBuilder diavolaBuilder = new PizzaBuilder();
+		diavolaBuilder.setThickness(PizzaThick.class);
 		diavolaBuilder.setSize(18);
 		diavolaBuilder.sauce(DecoratorTomato.class);
 		diavolaBuilder.addIngredient(DecoratorMozzarella.class);
