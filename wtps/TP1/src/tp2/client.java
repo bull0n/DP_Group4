@@ -11,20 +11,20 @@ import tp2.decorator.ingredient.DecoratorOrigan;
 import tp2.decorator.ingredient.DecoratorPepper;
 import tp2.decorator.ingredient.DecoratorSpicySalami;
 import tp2.decorator.sauce.DecoratorTomato;
-import tp2.state.StatePizza;
-import tp2.state.StatePizzaThick;
+import tp2.state.StatePizzaContext;
 
 public class client {
 
 	public static void main(String[] args) {
 
-		//part1And2();
+		part1And2();
 		part3();
 	}
 	
 	public static void part1And2() {
 		// Margherita : sauce tomate, mozzarella, and origan			
 		PizzaBuilder margueritaBuilder = new PizzaBuilder();
+		margueritaBuilder.setThickness(PizzaThick.class);
 		margueritaBuilder.setSize(45);
 		margueritaBuilder.sauce(DecoratorTomato.class);
 		margueritaBuilder.addIngredient(DecoratorMozzarella.class);
@@ -32,6 +32,7 @@ public class client {
 
 		// Profunghi : sauce tomate, mozzarella, jambon, champignon
 		PizzaBuilder profunghiBuilder = new PizzaBuilder();
+		profunghiBuilder.setThickness(PizzaThin.class);
 		profunghiBuilder.setSize(20);
 		profunghiBuilder.sauce(DecoratorTomato.class);
 		profunghiBuilder.addIngredient(DecoratorMozzarella.class);
@@ -40,6 +41,7 @@ public class client {
 		
 		// Diavola : sauce tomate, mozzarella, salami piquant, piment
 		PizzaBuilder diavolaBuilder = new PizzaBuilder();
+		diavolaBuilder.setThickness(PizzaThick.class);
 		diavolaBuilder.setSize(18);
 		diavolaBuilder.sauce(DecoratorTomato.class);
 		diavolaBuilder.addIngredient(DecoratorMozzarella.class);
@@ -70,7 +72,53 @@ public class client {
 	}
 	
 	public static void part3() {
-
+		// Margherita : sauce tomate, mozzarella, and origan			
+		PizzaBuilder margueritaBuilder = new PizzaBuilder();
+		margueritaBuilder.setThickness(PizzaThick.class);
+		margueritaBuilder.setSize(45);
+		margueritaBuilder.sauce(DecoratorTomato.class);
+		margueritaBuilder.addIngredient(DecoratorMozzarella.class);
+		margueritaBuilder.addIngredient(DecoratorOrigan.class);
+		
+		Pizza_I marguerita = margueritaBuilder.getPizza();
+		
+		// Contexte pizza
+		StatePizzaContext pizzaContext = new StatePizzaContext(marguerita);
+		
+		printPizzaContext(pizzaContext);
+		try {
+			pizzaContext.prepare();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		printPizzaContext(pizzaContext);
+		try {
+			pizzaContext.cook();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		printPizzaContext(pizzaContext);
+		try {
+			pizzaContext.cook();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		printPizzaContext(pizzaContext);
+		
+	}
+	
+	public static void printPizzaContext(StatePizzaContext pizzaContext)
+	{
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println(pizzaContext.getState());
+		System.out.println("---------------------------------------------------------------------");
+		System.out.println(pizzaContext);
+		System.out.println(pizzaContext.getLactose());
+		System.out.println(pizzaContext.getTaste());
+		System.out.println(pizzaContext.getAroma());
+		System.out.println("---------------------------------------------------------------------");
 	}
 
 }

@@ -1,5 +1,7 @@
 package tp2;
 
+import tp2.state.State_I;
+
 public interface Pizza_I {
 	
 	public float getPrice();

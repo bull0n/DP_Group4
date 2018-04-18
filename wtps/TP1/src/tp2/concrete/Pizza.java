@@ -1,6 +1,8 @@
 package tp2.concrete;
 
 import tp2.Pizza_I;
+import tp2.state.StateOrdered;
+import tp2.state.State_I;
 
 public abstract class Pizza implements Pizza_I {
 
@@ -40,7 +42,7 @@ public abstract class Pizza implements Pizza_I {
 	@Override
 	public String toString()
 	{
-		return "diameter : " + this.size + " type : ";
+		return "diameter : " + this.size + " | type : ";
 	}
 
 	protected int size;

@@ -2,15 +2,15 @@ package tp2.state;
 
 public interface State_I {
 
-	public float getLactose(StatePizza pizza);
+	public float getLactose(StatePizzaContext pizzaContext);
 	
-	public String getTaste(StatePizza pizza);
+	public String getTaste(StatePizzaContext pizzaContext);
 	
-	public String getAroma(StatePizza pizza);
+	public String getAroma(StatePizzaContext pizzaContext);
 	
 	public String toString();
 	
-	public void prepare(StatePizza pizza) throws Exception;
+	public void prepare(StatePizzaContext pizzaContext) throws Exception;
 	
-	public void cook(StatePizza pizza) throws Exception;
+	public void cook(StatePizzaContext pizzaContext) throws Exception;
 }

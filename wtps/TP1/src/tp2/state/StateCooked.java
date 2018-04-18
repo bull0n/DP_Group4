@@ -1,23 +1,22 @@
 package tp2.state;
 
-import tp2.concrete.Pizza;
 import tp2.enums.Tastes;
 
 public class StateCooked implements State_I {
 
 	@Override
-	public float getLactose(StatePizza pizza) {
-		return pizza.getLactose()/2;
+	public float getLactose(StatePizzaContext pizzaContext) {
+		return LACTOSE * pizzaContext.getPizza().getLactose();
 	}
 
 	@Override
-	public String getTaste(StatePizza pizza) {
-		return Tastes.GOOD.name();
+	public String getTaste(StatePizzaContext pizzaContext) {
+		return pizzaContext.getPizza().getTaste();
 	}
 
 	@Override
-	public String getAroma(StatePizza pizza) {
-		return pizza.getAroma();
+	public String getAroma(StatePizzaContext pizzaContext) {
+		return pizzaContext.getPizza().getAroma();
 	}
 
 	@Override
@@ -27,15 +26,16 @@ public class StateCooked implements State_I {
 	}
 	
 	@Override
-	public void prepare(StatePizza pizza) throws Exception {
+	public void prepare(StatePizzaContext pizzaContext) throws Exception {
 		throw new Exception(EXCEPTION_MSG);
 	}
 
 	@Override
-	public void cook(StatePizza pizza) throws Exception {
-		pizza.setState(new StateOvercooked());
+	public void cook(StatePizzaContext pizzaContext) throws Exception {
+		pizzaContext.setState(new StateOvercooked());
 	}
 	
+	private static float LACTOSE = 0.5f;
 	private static String STATE = "state : cooked";
 	private static String EXCEPTION_MSG = "Already cooked, can not be prepared...";
 }
