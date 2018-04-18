@@ -242,35 +242,7 @@ public class ContextPizza implements Pizza_I{
 		this.state = state;
 	}
 
-	@Override
-	public float getPrice() {
-		return pizza.getPrice();
-	}
-
-	@Override
-	public boolean isSpicy() {
-		return pizza.isSpicy();
-	}
-
-	@Override
-	public float getLactose() throws Exception {
-		return state.getLactose(this);
-	}
-
-	@Override
-	public boolean isVegetarian() {
-		return pizza.isVegetarian();
-	}
-
-	@Override
-	public int getSize() {
-		return pizza.getSize();
-	}
-
-	@Override
-	public String getTaste() throws Exception {
-		return state.getTaste(this);
-	}
+   // ...
 
 	@Override
 	public String getAroma() throws Exception {
