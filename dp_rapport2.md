@@ -22,7 +22,7 @@ Toutes les classes implémentent l'interface `Pizza_I`. Et les 3 patterns sont i
 
 ![Singleton](pizza_i.png)
 
-Toutes les classes propres ont pattern on été préfixé par le nom de celui-ci afin d'identifier plus facilement quel pattern est utilisé.
+Toutes les classes propres aux patterns on été préfixées par le nom de celui-ci afin d'identifier plus facilement quel pattern est utilisé.
 
 ## Decorator
 
@@ -30,15 +30,15 @@ Decorator est un pattern qui permet d'ajouter un fonctionnement à un objet de b
 
 ### Réalisation
 
-Les decorators représentent les ingrédients  et la sauce sur la pizza. Nous avons donc créer une classe abstraite, `Decorator` qui représentent tous les ingrédients et nous avons fait deux classes qui hérite de `Decorator`, `DecoratorSauce` et `DecoratorIngredient`. Ces décorateurs sont séparés car ils ont un comportement différent. La sauce ne va jamais modifier le prix, car faisant parti de l'offre de base, contrairement contrairement aux ingrédients. Ceux deux classes permettent également de faire de la généralisation et donc de séparé les sauces des ingrédients rajouter.
+Les decorators représentent les ingrédients et la sauce sur la pizza. Nous avons donc créer une classe abstraite, `Decorator` qui représentent tous les ingrédients et nous avons fait deux classes qui hérite de `Decorator`, `DecoratorSauce` et `DecoratorIngredient`. Ces décorateurs sont séparés car ils ont un comportement différent. La sauce ne va jamais modifier le prix, car faisant parti de l'offre de base, contrairement aux ingrédients. Ces deux classes permettent également de faire de la généralisation et donc de séparer les sauces des ingrédients rajoutés.
 
-Les décorateurs ont également un énuméré `Aromas` et `Tastes`, qui va permettre de concatené facilement les différents types de gout et arômes de chaque ingrédients / sauces.
+Les décorateurs ont également un énuméré `Aromas` et `Tastes`, qui va permettre de concatener facilement les différents types de goût et arômes de chaque ingrédient/sauce.
 
 SCHEMA INGREDIENT, SAUCE ET DECORATOR
 
 #### Ingrédients
 
-Ensuite nous avons ajouté plusieurs ingrédients qui héritent de `DecoratorIngredient`, `DecoratorBacon`, `DecoratorHam`, `DecoratorMozzarella`, `DecoratorOregano`, `DecoratorPepper` et `DecoratorPepperoni`. Tous ces ingrédents redéfinissent les fonctions de l'interface `Pizza_I` et auront chacun leur propre prix.
+Ensuite nous avons ajouté plusieurs ingrédients qui héritent de `DecoratorIngredient`, `DecoratorBacon`, `DecoratorHam`, `DecoratorMozzarella`, `DecoratorOregano`, `DecoratorPepper` et `DecoratorPepperoni`. Tous ces ingrédients redéfinissent les fonctions de l'interface `Pizza_I` et auront chacun leur propre prix.
 
 SCHEMA INGREDIENT
 
@@ -95,7 +95,7 @@ public String toString() {
 
 #### Sauce
 
-Les sauces, `DecoratorCream` et `DecoratorTomato` implémente `DecoratorSauce`, comme énoncé prédédemment. Elles n'ont pas de prix et donc la fonction de renvoie de prix est directement implémenté dans la fonction `DecoratorSauce`.
+Les sauces, `DecoratorCream` et `DecoratorTomato` implémentent `DecoratorSauce`, comme énoncé précédemment. Elles n'ont pas de prix et donc la fonction de renvoi de prix est directement implémenté dans la fonction `DecoratorSauce`.
 
 SCHEMA SAUCE
 
@@ -155,11 +155,13 @@ code here
 Le patron de conception "State" permet de changer le comportement d'un objet selon l'état dans lequel il est.
 
 ### Réalisation
-Pour mettre en place de ce patron, nous avons créé une interface "State_I" qui comporte toutes les méthodes relatives aux états de la pizza. Ensuite, plusieurs classes d'état ont été créées sous les noms suivants :
-- "StateOrderer" : état commandé
-- "StatePrepared" : état préparé
-- "StateCooked" : état cuit
-- "StateOvercooked" : état râté
+Pour mettre en place de ce patron, nous avons créé une interface `State_I` qui comporte toutes les méthodes relatives aux états de la pizza. Ensuite, plusieurs classes d'état ont été créées sous les noms suivants :
+
+- `StateOrderer` : état commandé
+- `StatePrepared` : état préparé
+- `StateCooked` : état cuit
+- `StateOvercooked` : état râté
+
 Tous ces états effectue des tâches différentes. La classe "PizzaContext" permet d'adapter le comportement selon l'état du moment de la pizza.
 
 #### Diagramme de class
