@@ -16,7 +16,10 @@ numbersections: true
 
 ## Decorator
 ### Identification
+La class ``
 ### Réalisation
+Pour réaliser ce design pattern, nous avons créé une interface `Pizza_I` afin de définir les fonctions disponibles pour une pizza. Nous avons également créé une class abstraite `Decorator` implémentant l'interface `Pizza_I`. Cette classe contient 3 attributs, 1 Pizza_I, l'élément qu'il décore ainsi que 2 énumérés `Aroma` et `Taste`
+
 ```java
 code here
 ```

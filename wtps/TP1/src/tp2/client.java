@@ -11,7 +11,7 @@ import tp2.decorator.ingredient.DecoratorOrigan;
 import tp2.decorator.ingredient.DecoratorPepper;
 import tp2.decorator.ingredient.DecoratorSpicySalami;
 import tp2.decorator.sauce.DecoratorTomato;
-import tp2.state.StatePizzaContext;
+import tp2.state.PizzaContext;
 
 public class client {
 
@@ -83,7 +83,7 @@ public class client {
 		Pizza_I marguerita = margueritaBuilder.getPizza();
 		
 		// Contexte pizza
-		StatePizzaContext pizzaContext = new StatePizzaContext(marguerita);
+		PizzaContext pizzaContext = new PizzaContext(marguerita);
 		
 		printPizzaContext(pizzaContext);
 		try {
@@ -95,22 +95,21 @@ public class client {
 		try {
 			pizzaContext.cook();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		printPizzaContext(pizzaContext);
 		try {
 			pizzaContext.cook();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		printPizzaContext(pizzaContext);
 		
 	}
 	
-	public static void printPizzaContext(StatePizzaContext pizzaContext)
+	public static void printPizzaContext(PizzaContext pizzaContext)
 	{
+		try {
 		System.out.println("---------------------------------------------------------------------");
 		System.out.println(pizzaContext.getState());
 		System.out.println("---------------------------------------------------------------------");
@@ -119,6 +118,9 @@ public class client {
 		System.out.println(pizzaContext.getTaste());
 		System.out.println(pizzaContext.getAroma());
 		System.out.println("---------------------------------------------------------------------");
+		}catch(Exception e) {
+			
+		}
 	}
 
 }

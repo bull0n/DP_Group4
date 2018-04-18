@@ -17,7 +17,7 @@ public abstract class Decorator implements Pizza_I {
 	public abstract boolean isSpicy();
 
 	@Override
-	public abstract float getLactose();
+	public abstract float getLactose() throws Exception;
 
 	@Override
 	public abstract boolean isVegetarian();
@@ -28,10 +28,10 @@ public abstract class Decorator implements Pizza_I {
 	}
 
 	@Override
-	public abstract String getTaste();
+	public abstract String getTaste() throws Exception;
 
 	@Override
-	public abstract String getAroma();
+	public abstract String getAroma() throws Exception;
 
 	@Override
 	public abstract String toString();

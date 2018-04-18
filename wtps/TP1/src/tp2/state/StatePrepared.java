@@ -6,17 +6,17 @@ import tp2.enums.Tastes;
 public class StatePrepared implements State_I{
 
 	@Override
-	public float getLactose(StatePizzaContext pizzaContext) {
+	public float getLactose(PizzaContext pizzaContext) throws Exception {
 		return pizzaContext.getPizza().getLactose();
 	}
 
 	@Override
-	public String getTaste(StatePizzaContext pizzaContext) {
+	public String getTaste(PizzaContext pizzaContext) {
 		return Tastes.RAW_TASTE.toString();
 	}
 
 	@Override
-	public String getAroma(StatePizzaContext pizzaContext) {
+	public String getAroma(PizzaContext pizzaContext) {
 		return Aromas.RAW_AROMA.toString();
 	}
 
@@ -27,12 +27,12 @@ public class StatePrepared implements State_I{
 	}
 	
 	@Override
-	public void prepare(StatePizzaContext pizzaContext) {
+	public void prepare(PizzaContext pizzaContext) {
 		// Do nothing
 	}
 
 	@Override
-	public void cook(StatePizzaContext pizzaContext) {
+	public void cook(PizzaContext pizzaContext) {
 		pizzaContext.setState(new StateCooked());
 	}
 	

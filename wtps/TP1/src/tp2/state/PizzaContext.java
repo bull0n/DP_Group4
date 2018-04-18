@@ -2,13 +2,13 @@ package tp2.state;
 
 import tp2.Pizza_I;
 
-public class StatePizzaContext implements Pizza_I{
+public class PizzaContext implements Pizza_I{
 	
-	public StatePizzaContext(Pizza_I pizza) {
+	public PizzaContext(Pizza_I pizza) {
 		this(pizza, new StateOrdered());
 	}
 	
-	public StatePizzaContext(Pizza_I pizza, State_I state) {
+	public PizzaContext(Pizza_I pizza, State_I state) {
 		this.pizza = pizza;
 		this.state = state;
 	}
@@ -24,7 +24,7 @@ public class StatePizzaContext implements Pizza_I{
 	}
 
 	@Override
-	public float getLactose() {
+	public float getLactose() throws Exception {
 		return state.getLactose(this);
 	}
 
@@ -39,12 +39,12 @@ public class StatePizzaContext implements Pizza_I{
 	}
 
 	@Override
-	public String getTaste() {
+	public String getTaste() throws Exception {
 		return state.getTaste(this);
 	}
 
 	@Override
-	public String getAroma() {
+	public String getAroma() throws Exception {
 		return state.getAroma(this);
 	}
 	

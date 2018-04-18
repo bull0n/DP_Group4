@@ -8,15 +8,15 @@ public interface Pizza_I {
 	
 	public boolean isSpicy();
 	
-	public float getLactose();
+	public float getLactose() throws Exception;
 	
 	public boolean isVegetarian();
 	
 	public int getSize();
 	
-	public String getTaste();
+	public String getTaste() throws Exception;
 	
-	public String getAroma();
+	public String getAroma() throws Exception;
 	
 	public String toString();
 	
