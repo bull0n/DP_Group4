@@ -24,7 +24,7 @@ public class DecoratorSpicySalami extends DecoratorIngredient {
 	}
 
 	@Override
-	public float getLactose() {
+	public float getLactose() throws Exception {
 		return this.pizza.getLactose();
 	}
 
@@ -34,12 +34,12 @@ public class DecoratorSpicySalami extends DecoratorIngredient {
 	}
 
 	@Override
-	public String getTaste() {
+	public String getTaste() throws Exception {
 		return this.pizza.getTaste() + this.taste.toString();
 	}
 
 	@Override
-	public String getAroma() {
+	public String getAroma() throws Exception {
 		return this.pizza.getAroma() + this.aroma.toString();
 	}
 
