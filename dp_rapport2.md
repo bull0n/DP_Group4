@@ -48,6 +48,10 @@ Tous ces états effectue des tâches différentes. La classe "PizzaContext" perm
 
 #### Diagramme de class
 
+![StatePattern](StatePattern.jpg)
+
+#### Code
+
 ```java
 // Interface d'état
 public interface State_I {
