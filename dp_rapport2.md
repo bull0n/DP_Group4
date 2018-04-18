@@ -151,6 +151,9 @@ code here
 #### Diagramme de classe
 
 ## State
+
+Le patron de conception "State" permet de changer le comportement d'un objet selon l'état dans lequel il est.
+
 ### Réalisation
 Pour mettre en place de ce patron, nous avons créé une interface "State_I" qui comporte toutes les méthodes relatives aux états de la pizza. Ensuite, plusieurs classes d'état ont été créées sous les noms suivants :
 - "StateOrderer" : état commandé
@@ -300,4 +303,4 @@ public class ContextPizza implements Pizza_I{
 
 ### Conclusion
 L'objectif est atteint. A l'aide de ce patron, nous avons pu réaliser une structure de programme adéquat pour le changement de comportement de nos objets "Pizza" selon leur état.
-Ce patron s'avère très pratique dans de telles situations.
+Ce patron s'avère très pratique dans de telles situations. En effet, le code est beaucoup moins "lourd" (évite beaucoup de "if") et le programme se trouve mieux structuré.
