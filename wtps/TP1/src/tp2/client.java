@@ -11,6 +11,7 @@ import tp2.decorator.ingredient.DecoratorOrigan;
 import tp2.decorator.ingredient.DecoratorPepper;
 import tp2.decorator.ingredient.DecoratorSpicySalami;
 import tp2.decorator.sauce.DecoratorTomato;
+import tp2.state.StatePizzaContext;
 
 public class client {
 
@@ -78,28 +79,39 @@ public class client {
 		
 		Pizza_I marguerita = margueritaBuilder.getPizza();
 		
-		System.out.println(marguerita);
-		System.out.println(marguerita.getLactose());
-		System.out.println(marguerita.getAroma());
-		System.out.println(marguerita.getTaste());
+		// Contexte pizza
+		StatePizzaContext pizzaContext = new StatePizzaContext(marguerita);
 		
+		printPizzaContext(pizzaContext);
 		try {
-			marguerita.prepare();
+			pizzaContext.prepare();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		printPizzaContext(pizzaContext);
+		try {
+			pizzaContext.cook();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		System.out.println(marguerita);
-		
+		printPizzaContext(pizzaContext);
 		try {
-			marguerita.cook();
+			pizzaContext.cook();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//printPizzaContext(pizzaContext);
 		
-		System.out.println(marguerita);
+	}
+	
+	public static void printPizzaContext(StatePizzaContext pizzaContext)
+	{
+		System.out.println(pizzaContext);
+		//System.out.println(pizzaContext.getLactose()); stackoverflow
+		//System.out.println(pizzaContext.getTaste());
+		//System.out.println(pizzaContext.getAroma());
 	}
 
 }

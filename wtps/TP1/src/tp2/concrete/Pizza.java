@@ -16,7 +16,7 @@ public abstract class Pizza implements Pizza_I {
 
 	@Override
 	public float getLactose() {
-		return state.getLactose(this);
+		return 0;
 	}
 
 	@Override
@@ -31,52 +31,25 @@ public abstract class Pizza implements Pizza_I {
 
 	@Override
 	public String getTaste() {
-		return "TASTE Pizza : " + state.getTaste(this) + " | Ingredients : ";
+		return "";
 	}
 
 	@Override
 	public String getAroma() {
-		return "AROMA Pizza : " + state.getAroma(this) + " | Ingredients : ";
+		return "";
 	}
 
 	@Override
 	public String toString()
 	{
-		return this.state.toString() + " | diameter : " + this.size + " | type : ";
+		return "diameter : " + this.size + " | type : ";
 	}
 
 	protected int size;
 	protected final float price = 1f;
 	
 	public Pizza(int size) {
-		this(size, new StateOrdered());
-	}
-	
-	// STATE
-	
-	public Pizza(int size, State_I state) {
 		this.size = size;
-		this.state = state;
 	}
-	
-	@Override
-	public void prepare() throws Exception {
-		state.prepare(this);
-	}
-	
-	@Override
-	public void cook() throws Exception {
-		state.cook(this);
-	}
-	
-	public void setState(State_I state) {
-		this.state = state;
-	}
-	
-	public State_I getState() {
-		return state;
-	}
-	
-	protected State_I state;
 
 }

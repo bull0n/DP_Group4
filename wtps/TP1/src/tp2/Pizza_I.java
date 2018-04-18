@@ -20,10 +20,4 @@ public interface Pizza_I {
 	
 	public String toString();
 	
-	// State
-	
-	public void prepare() throws Exception;
-	
-	public void cook() throws Exception;
-	
 }
