@@ -141,6 +141,8 @@ public class DecoratorTomato extends DecoratorSauce {
 #### Diagramme de classe
 
 ## Builder
+
+Le patron de conception
 ### Identification
 ### Implémentation
 ```java
@@ -152,7 +154,7 @@ code here
 
 ## State
 
-Le patron de conception "State" permet de changer le comportement d'un objet selon l'état dans lequel il est.
+Le patron de conception `State` permet de changer le comportement d'un objet selon l'état dans lequel il est.
 
 ### Réalisation
 Pour mettre en place de ce patron, nous avons créé une interface `State_I` qui comporte toutes les méthodes relatives aux états de la pizza. Ensuite, plusieurs classes d'état ont été créées sous les noms suivants :
