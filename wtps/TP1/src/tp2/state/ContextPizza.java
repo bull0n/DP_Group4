@@ -2,13 +2,13 @@ package tp2.state;
 
 import tp2.Pizza_I;
 
-public class PizzaContext implements Pizza_I{
+public class ContextPizza implements Pizza_I{
 	
-	public PizzaContext(Pizza_I pizza) {
+	public ContextPizza(Pizza_I pizza) {
 		this(pizza, new StateOrdered());
 	}
 	
-	public PizzaContext(Pizza_I pizza, State_I state) {
+	public ContextPizza(Pizza_I pizza, State_I state) {
 		this.pizza = pizza;
 		this.state = state;
 	}

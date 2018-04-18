@@ -13,9 +13,9 @@ import tp2.concrete.Pizza;
 import tp2.decorator.ingredient.DecoratorIngredient;
 import tp2.decorator.sauce.DecoratorSauce;
 
-public class PizzaBuilder {
+public class BuilderPizza {
 	
-	public PizzaBuilder(){
+	public BuilderPizza(){
 		this.listIngredient = new ArrayList<Class<? extends DecoratorIngredient>>();
 	}
 	

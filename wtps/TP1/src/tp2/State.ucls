@@ -37,7 +37,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="tp2.state.PizzaContext" project="TP1" file="/TP1/src/tp2/state/PizzaContext.java" 
+  <class id="5" language="java" name="tp2.state.ContextPizza" project="TP1" file="/TP1/src/tp2/state/ContextPizza.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="333" width="167" x="1073" y="252"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

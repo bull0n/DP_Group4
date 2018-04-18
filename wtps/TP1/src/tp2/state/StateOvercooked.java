@@ -3,17 +3,17 @@ package tp2.state;
 public class StateOvercooked implements State_I {
 
 	@Override
-	public float getLactose(PizzaContext pizzaContext) throws Exception {
+	public float getLactose(ContextPizza pizzaContext) throws Exception {
 		throw new Exception("Overcooked");
 	}
 
 	@Override
-	public String getTaste(PizzaContext pizzaContext) throws Exception {
+	public String getTaste(ContextPizza pizzaContext) throws Exception {
 		throw new Exception("Overcooked");
 	}
 
 	@Override
-	public String getAroma(PizzaContext pizzaContext) throws Exception {
+	public String getAroma(ContextPizza pizzaContext) throws Exception {
 		throw new Exception("Overcooked");
 	}
 
@@ -24,12 +24,12 @@ public class StateOvercooked implements State_I {
 	}
 	
 	@Override
-	public void prepare(PizzaContext pizzaContext) throws Exception {
+	public void prepare(ContextPizza pizzaContext) throws Exception {
 		throw new Exception("Overcooked");
 	}
 
 	@Override
-	public void cook(PizzaContext pizzaContext) throws Exception {
+	public void cook(ContextPizza pizzaContext) throws Exception {
 		throw new Exception("Overcooked");
 	}
 	

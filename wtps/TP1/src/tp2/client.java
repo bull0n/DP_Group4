@@ -1,6 +1,6 @@
 package tp2;
 
-import tp2.builder.PizzaBuilder;
+import tp2.builder.BuilderPizza;
 import tp2.concrete.PizzaThick;
 import tp2.concrete.PizzaThin;
 import tp2.decorator.ingredient.DecoratorBacon;
@@ -11,7 +11,7 @@ import tp2.decorator.ingredient.DecoratorOregano;
 import tp2.decorator.ingredient.DecoratorPepper;
 import tp2.decorator.ingredient.DecoratorPepperoni;
 import tp2.decorator.sauce.DecoratorTomato;
-import tp2.state.PizzaContext;
+import tp2.state.ContextPizza;
 
 public class client {
 
@@ -24,7 +24,7 @@ public class client {
 	public static void part1And2() {
 		try {
 			// Margherita : sauce tomate, mozzarella, and origan			
-			PizzaBuilder margueritaBuilder = new PizzaBuilder();
+			BuilderPizza margueritaBuilder = new BuilderPizza();
 			margueritaBuilder.setThickness(PizzaThick.class);
 			margueritaBuilder.setSize(45);
 			margueritaBuilder.sauce(DecoratorTomato.class);
@@ -32,7 +32,7 @@ public class client {
 			margueritaBuilder.addIngredient(DecoratorOregano.class);
 	
 			// Profunghi : sauce tomate, mozzarella, jambon, champignon
-			PizzaBuilder profunghiBuilder = new PizzaBuilder();
+			BuilderPizza profunghiBuilder = new BuilderPizza();
 			profunghiBuilder.setThickness(PizzaThin.class);
 			profunghiBuilder.setSize(20);
 			profunghiBuilder.sauce(DecoratorTomato.class);
@@ -41,7 +41,7 @@ public class client {
 			profunghiBuilder.addIngredient(DecoratorMushroom.class);
 			
 			// Diavola : sauce tomate, mozzarella, salami piquant, piment
-			PizzaBuilder diavolaBuilder = new PizzaBuilder();
+			BuilderPizza diavolaBuilder = new BuilderPizza();
 			diavolaBuilder.setThickness(PizzaThick.class);
 			diavolaBuilder.setSize(18);
 			diavolaBuilder.sauce(DecoratorTomato.class);
@@ -77,7 +77,7 @@ public class client {
 	
 	public static void part3() {
 		// Margherita : sauce tomate, mozzarella, and origan			
-		PizzaBuilder margueritaBuilder = new PizzaBuilder();
+		BuilderPizza margueritaBuilder = new BuilderPizza();
 		margueritaBuilder.setThickness(PizzaThick.class);
 		margueritaBuilder.setSize(45);
 		margueritaBuilder.sauce(DecoratorTomato.class);
@@ -87,7 +87,7 @@ public class client {
 		Pizza_I marguerita = margueritaBuilder.getPizza();
 		
 		// Contexte pizza
-		PizzaContext pizzaContext = new PizzaContext(marguerita);
+		ContextPizza pizzaContext = new ContextPizza(marguerita);
 		
 		printPizzaContext(pizzaContext);
 		try {
@@ -111,7 +111,7 @@ public class client {
 		
 	}
 	
-	public static void printPizzaContext(PizzaContext pizzaContext)
+	public static void printPizzaContext(ContextPizza pizzaContext)
 	{
 		try {
 		System.out.println("---------------------------------------------------------------------");
