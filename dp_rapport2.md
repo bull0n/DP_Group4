@@ -140,13 +140,104 @@ public class DecoratorTomato extends DecoratorSauce {
 Pour des raisons de lisibilité, tous les decorator `DecoratorIngredient` ne sont pas représentés
 
 ## Builder
-Le patron de conception `Builder` permet de créer une variété d'objets complexes à partir d'un objet source.
+Le patron de conception `Builder` permet de créer une variété d'objets complexes à partir d'un objet source nommé `PizzaBuilder`.
 
 ### Réalisation
-```java
-code here
+Nous avons été confronté à un dileme durant la réalisation de ce pattern, car il y existe au moins deux variantes principales d'appliquer ce pattern à cette solution.
+
+#### Première solution
+La première que nous avons retenue qui permet de répondre à 100% au cahier des charges se constitue d'une interface `PizzaBuilder_I` et d'une classe `PizzaBuilder`. Nous n'avons pas développé de *director* car le client s'occupe de cette tâche.
+
+Cette première interface contient les méthodes suivantes:
+```Java
+package tp2.builder.v1;
+
+import tp2.Pizza_I;
+import tp2.decorator.ingredient.DecoratorIngredient;
+import tp2.decorator.sauce.DecoratorSauce;
+
+public interface PizzaBuilder_I {
+	public void setThickness(Class<? extends Pizza_I> pizza);
+
+	public <SauceClass extends DecoratorSauce> void sauce(Class<SauceClass> sauce);
+
+	public void addIngredient(Class<? extends DecoratorIngredient> ingredient);
+
+	public void setSize(int radius);
+
+	public Pizza_I getPizza();
+}
 ```
-#### Exemple de code
+
+Finalement, voici l'implémentation de la class principale PizzaBuilder.
+
+```Java
+public class PizzaBuilder implements PizzaBuilder_I {
+
+	public PizzaBuilder() {
+		this.listIngredient = new ArrayList<Class<? extends DecoratorIngredient>>();
+	}
+
+	@Override
+	public void setThickness(Class<? extends Pizza_I> pizza) {
+		this.pizza = pizza;
+	}
+
+	@Override
+	public <SauceClass extends DecoratorSauce> void sauce(Class<SauceClass> sauce) {
+		this.sauce = sauce;
+	}
+
+	@Override
+	public void addIngredient(Class<? extends DecoratorIngredient> ingredient) {
+		if (!listIngredient.contains(ingredient)) {
+			this.listIngredient.add(ingredient);
+		}
+	}
+
+	@Override
+	public void setSize(int radius) {
+		this.radius = radius;
+	}
+
+	@Override
+	public Pizza_I getPizza() {
+		// Build
+		Pizza_I newPizza = null;
+		try {
+			// Création de la pizza
+			newPizza = (Pizza_I) pizza.getConstructor(int.class).newInstance(this.radius);
+
+			// Ajout de la sauce
+			newPizza = (Pizza_I) sauce.getConstructor(Pizza_I.class).newInstance(newPizza);
+
+			// Ajout des ingrédients
+			for (Class<? extends DecoratorIngredient> ingredient : listIngredient) {
+				newPizza = (Pizza_I) ingredient.getConstructor(Pizza_I.class).newInstance(newPizza);
+			}
+
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException | SecurityException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return newPizza;
+	}
+
+	// Input
+	int radius;
+	Class<? extends Pizza_I> pizza;
+	Class<? extends DecoratorSauce> sauce;
+	List<Class<? extends DecoratorIngredient>> listIngredient;
+
+```
+
+Notre implémentation nous permet de retourner une nouvelle pizza à chaque appel de la fonction `getPizza`, certaines variantes de ce pattern fonctionnent différemment et nécessitent de rappeler les fonctions de constructions avant chaque nouvelle pizza car autrement ils retournent la même pizza.
+
+### Seconde solution
+La première solution est de voir une sorte de pizza par `ConcreteBuilder`, ce qui nous donnerais alors
+
+- La première
 
 #### Diagramme de classe
 
@@ -154,8 +245,9 @@ code here
 
 
 ## State
+Le patron de conception `State` permet de changer le comportement d'un objet selon l'état dans lequel il se trouve. Nous aurions pû mdofier directement la classe `Pizza` mais celà aurait complexifié inutilement le code.
 
-Le patron de conception `State` permet de changer le comportement d'un objet selon l'état dans lequel il est.
+Afin de pouvoir utiliser les contexte sur la class `Pizza` précédemment créée, nous avons créé une classe `ContextPizza` afin d'encapsuler notre objet pizza et modifier les différentes réponses des fonctions de notre objet.
 
 ### Réalisation
 Pour mettre en place de ce patron, nous avons créé une interface `State_I` qui comporte toutes les méthodes relatives aux états de la pizza. Ensuite, plusieurs classes d'état ont été créées sous les noms suivants :

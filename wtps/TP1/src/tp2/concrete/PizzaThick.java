@@ -1,6 +1,6 @@
 package tp2.concrete;
 
-public class PizzaThick extends Pizza {
+public class PizzaThick extends PizzaBase {
 	public PizzaThick(int size) {
 		super(size);
 	}
@@ -12,9 +12,9 @@ public class PizzaThick extends Pizza {
 
 	@Override
 	public float getPrice() {
-		return this.price*this.getSize();
+		return this.getSize() * this.PRICE;
 	}
 	
-	private final float price = 1.5f;
+	protected final float PRICE = 1.5f;
 
 }
