@@ -143,23 +143,16 @@ Pour des raisons de lisibilité, tous les decorator `DecoratorIngredient` ne son
 Le patron de conception `Builder` permet de créer une variété d'objets complexes à partir d'un objet source nommé `PizzaBuilder`.
 
 ### Réalisation
-Nous avons été confronté à un dileme durant la réalisation de ce pattern, car il y existe au moins deux variantes principales d'appliquer ce pattern à cette solution.
+Ce pattern est constitué en premier d'une interface `PizzaBuilder_I` et d'une classe `PizzaBuilder` qui représente une implémentation concrète du Builder. Nous avons également développé un *director* nommé `PizzaDirector` comme dans la version standard du pattern qui va s'occuper de cacher la complexité du Builder mais celui-ci n'est pas indispensable dans notre cas d'utilisation.
 
-#### Première solution
-La première que nous avons retenue qui permet de répondre à 100% au cahier des charges se constitue d'une interface `PizzaBuilder_I` et d'une classe `PizzaBuilder`. Nous n'avons pas développé de *director* car le client s'occupe de cette tâche.
+Le code qui suit utilise les templates et les classes de Java. Par exemple, pour la fonction `setThickness(Class<? extends PizzaBase>)`, l'utilisateur doit founir une classe qui implémente la class `PizzaBase`. Pour pouvoir passer une classe en paramètre d'une classe propre, il suffit de faire: `PizzaThin.class();`.
 
-Cette première interface contient les méthodes suivantes:
+L'interface `Pizza_I` contient les méthodes suivantes:
 ```Java
-package tp2.builder.v1;
-
-import tp2.Pizza_I;
-import tp2.decorator.ingredient.DecoratorIngredient;
-import tp2.decorator.sauce.DecoratorSauce;
-
 public interface PizzaBuilder_I {
-	public void setThickness(Class<? extends Pizza_I> pizza);
+	public void setThickness(Class<? extends PizzaBase> pizza);
 
-	public <SauceClass extends DecoratorSauce> void sauce(Class<SauceClass> sauce);
+	public void sauce(Class<? extends DecoratorSauce> sauce);
 
 	public void addIngredient(Class<? extends DecoratorIngredient> ingredient);
 
@@ -167,9 +160,10 @@ public interface PizzaBuilder_I {
 
 	public Pizza_I getPizza();
 }
+
 ```
 
-Finalement, voici l'implémentation de la class principale PizzaBuilder.
+Finalement, voici l'implémentation de la class principale PizzaBuilder,
 
 ```Java
 public class PizzaBuilder implements PizzaBuilder_I {
@@ -179,12 +173,12 @@ public class PizzaBuilder implements PizzaBuilder_I {
 	}
 
 	@Override
-	public void setThickness(Class<? extends Pizza_I> pizza) {
+	public void setThickness(Class<? extends PizzaBase> pizza) {
 		this.pizza = pizza;
 	}
 
 	@Override
-	public <SauceClass extends DecoratorSauce> void sauce(Class<SauceClass> sauce) {
+	public void sauce(Class<? extends DecoratorSauce> sauce) {
 		this.sauce = sauce;
 	}
 
@@ -226,18 +220,33 @@ public class PizzaBuilder implements PizzaBuilder_I {
 
 	// Input
 	int radius;
-	Class<? extends Pizza_I> pizza;
+	Class<? extends PizzaBase> pizza;
 	Class<? extends DecoratorSauce> sauce;
 	List<Class<? extends DecoratorIngredient>> listIngredient;
+}
 
 ```
 
+Notre code nous permet de créer des Builder préconfiguré pour certaines sortes de Pizza, comme par exemple:
+```java
+public class PizzaBuilderDiavola extends PizzaBuilder {
+
+	public PizzaBuilderDiavola() {
+		super();
+		this.setSize(18);
+		this.setThickness(PizzaThick.class);
+		this.sauce(DecoratorTomato.class);
+		this.addIngredient(DecoratorMozzarella.class);
+		this.addIngredient(DecoratorPepperoni.class);
+		this.addIngredient(DecoratorPepper.class);
+	}
+}
+
+```
+
+Toutes les fonctions du builder sont disponible et il est ainsi possible de modifier le builder, lui rajouter des ingrédients, modifier sa taille, ...
+
 Notre implémentation nous permet de retourner une nouvelle pizza à chaque appel de la fonction `getPizza`, certaines variantes de ce pattern fonctionnent différemment et nécessitent de rappeler les fonctions de constructions avant chaque nouvelle pizza car autrement ils retournent la même pizza.
-
-### Seconde solution
-La première solution est de voir une sorte de pizza par `ConcreteBuilder`, ce qui nous donnerais alors
-
-- La première
 
 #### Diagramme de classe
 
