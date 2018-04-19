@@ -16,13 +16,13 @@ numbersections: true
 
 ## Introduction
 
-Pour ce Travail Pratique, il a été demandé de développé un programme de création de pizza en utilisant les patterns Decorator, Builder et State.
+Pour ce Travail Pratique, il a été demandé de développer un programme de création de pizza en utilisant les patterns Decorator, Builder et State.
 
 Toutes les classes implémentent l'interface `Pizza_I`. Et les 3 patterns sont implémentés dans leur package respectif.
 
 ![Pizza_I](pizza_i.png)
 
-Toutes les classes propres aux patterns on été préfixées par le nom de celui-ci afin d'identifier plus facilement quel pattern est utilisé.
+Toutes les classes propres aux patterns ont été préfixées par le nom de celui-ci afin d'identifier plus facilement quel pattern est utilisé.
 
 ## Decorator
 
@@ -30,9 +30,9 @@ Decorator est un pattern qui permet d'ajouter un fonctionnement à un objet de b
 
 ### Réalisation
 
-Les decorators représentent les ingrédients et la sauce sur la pizza. Nous avons donc créer une classe abstraite, `Decorator` qui représentent tous les ingrédients et nous avons fait deux classes qui hérite de `Decorator`, `DecoratorSauce` et `DecoratorIngredient`. Ces décorateurs sont séparés car ils ont un comportement différent. La sauce ne va jamais modifier le prix, car faisant parti de l'offre de base, contrairement aux ingrédients. Ces deux classes permettent également de faire de la généralisation et donc de séparer les sauces des ingrédients rajoutés.
+Les decorators représentent les ingrédients et la sauce sur la pizza. Nous avons donc créé une classe abstraite, `Decorator` qui représentent tous les ingrédients et nous avons fait deux classes qui hérite de `Decorator`, `DecoratorSauce` et `DecoratorIngredient`. Ces décorateurs sont séparés, car ils ont un comportement différent. La sauce ne va jamais modifier le prix, car faisant partie de l'offre de base, contrairement aux ingrédients. Ces deux classes permettent également de faire de la généralisation et donc de séparer les sauces des ingrédients rajoutés.
 
-Les décorateurs ont également un énuméré `Aromas` et `Tastes`, qui va permettre de concatener facilement les différents types de goût et arômes de chaque ingrédient/sauce.
+Les décorateurs ont également un énuméré `Aromas` et `Tastes`, qui va permettre de concaténer facilement les différents types de goût et arômes de chaque ingrédient/sauce.
 
 #### Ingrédients
 
@@ -95,7 +95,7 @@ public String toString() {
 
 #### Sauce
 
-Les sauces, `DecoratorCream` et `DecoratorTomato` implémentent `DecoratorSauce`, comme énoncé précédemment. Elles n'ont pas de prix et donc la fonction de renvoi de prix est directement implémenté dans la fonction `DecoratorSauce`.
+Les sauces, `DecoratorCream` et `DecoratorTomato` implémentent `DecoratorSauce`, comme énoncé précédemment. Elles n'ont pas de prix et donc la fonction de renvoi de prix est directement implémentée dans la fonction `DecoratorSauce`.
 
 ##### Exemple de code
 
@@ -143,7 +143,7 @@ Pour des raisons de lisibilité, tous les decorator `DecoratorIngredient` ne son
 Le patron de conception `Builder` permet de créer une variété d'objets complexes à partir d'un objet source nommé `PizzaBuilder`.
 
 ### Réalisation
-Ce pattern est constitué en premier d'une interface `PizzaBuilder_I` et d'une classe `PizzaBuilder` qui représente une implémentation concrète du Builder. Nous avons également développé un *director* nommé `PizzaDirector` comme dans la version standard du pattern qui va s'occuper de cacher la complexité du Builder mais celui-ci n'est pas indispensable dans notre cas d'utilisation.
+Ce pattern est constitué en premier lieu d'une interface `PizzaBuilder_I` et d'une classe `PizzaBuilder` qui représente une implémentation concrète du Builder. Nous avons également développé un *director* nommé `PizzaDirector` comme dans la version standard du pattern qui va s'occuper de cacher la complexité du Builder mais celui-ci n'est pas indispensable dans notre cas d'utilisation.
 
 Le code qui suit utilise les templates et les classes de Java. Par exemple, pour la fonction `setThickness(Class<? extends PizzaBase>)`, l'utilisateur doit founir une classe qui implémente la class `PizzaBase`. Pour pouvoir passer une classe en paramètre d'une classe propre, il suffit de faire: `PizzaThin.class();`.
 
@@ -227,7 +227,7 @@ public class PizzaBuilder implements PizzaBuilder_I {
 
 ```
 
-Notre code nous permet de créer des Builder préconfiguré pour certaines sortes de Pizza, comme par exemple:
+Notre code nous permet de créer des Builder préconfigurés pour certaines sortes de Pizza, par exemple:
 ```java
 public class PizzaBuilderDiavola extends PizzaBuilder {
 
@@ -244,7 +244,7 @@ public class PizzaBuilderDiavola extends PizzaBuilder {
 
 ```
 
-Toutes les fonctions du builder sont disponible et il est ainsi possible de modifier le builder, lui rajouter des ingrédients, modifier sa taille, ...
+Toutes les fonctions du builder sont disponibles et il est ainsi possible de modifier le builder, lui rajouter des ingrédients, modifier sa taille, ...
 
 Notre implémentation nous permet de retourner une nouvelle pizza à chaque appel de la fonction `getPizza`, certaines variantes de ce pattern fonctionnent différemment et nécessitent de rappeler les fonctions de constructions avant chaque nouvelle pizza car autrement ils retournent la même pizza.
 
@@ -253,14 +253,14 @@ Notre implémentation nous permet de retourner une nouvelle pizza à chaque appe
 ![BuilderPattern](Builder.jpg)
 
 ### Conclusion
-Notre solution rempli tous les points du cahier des charges. Ce patron permet de simplifier la création d'objets complexes. Notre implémentation java permet de facilement passer des classes au Builder qui lui va s'occuper de les instancier de manière dynamique.
+Notre solution remplit tous les points du cahier des charges. Ce patron permet de simplifier la création d'objets complexes. Notre implémentation java permet de facilement passer des classes au Builder qui lui va s'occuper de les instancier de manière dynamique.
 
-Celà permet de simplifier le code de l'utilisateur et de caché toute la complexité d'implémentation tout en offrant la possibilité de facilement étendre le système avec l'ajout d'autres décorateurs.
+Cele permet de simplifier le code de l'utilisateur et de cacher toute la complexité d'implémentation tout en offrant la possibilité de facilement étendre le système avec l'ajout d'autres décorateurs.
 
 ## State
-Le patron de conception `State` permet de changer le comportement d'un objet selon l'état dans lequel il se trouve. Nous aurions pû mdofier directement la classe `Pizza` mais celà aurait complexifié inutilement le code.
+Le patron de conception `State` permet de changer le comportement d'un objet selon l'état dans lequel il se trouve. Nous aurions pe mdofier directement la classe `Pizza` mais cela aurait complexifié inutilement le code.
 
-Afin de pouvoir utiliser les contexte sur la class `Pizza` précédemment créée, nous avons créé une classe `ContextPizza` afin d'encapsuler notre objet pizza et modifier les différentes réponses des fonctions de notre objet.
+Afin de pouvoir utiliser les contextes sur la class `Pizza` précédemment créée, nous avons créé une classe `ContextPizza` afin d'encapsuler notre objet pizza et modifier les différentes réponses des fonctions de notre objet.
 
 ### Réalisation
 Pour mettre en place de ce patron, nous avons créé une interface `State_I` qui comporte toutes les méthodes relatives aux états de la pizza. Ensuite, plusieurs classes d'état ont été créées sous les noms suivants :
@@ -268,9 +268,9 @@ Pour mettre en place de ce patron, nous avons créé une interface `State_I` qui
 - `StateOrderer` : état commandé
 - `StatePrepared` : état préparé
 - `StateCooked` : état cuit
-- `StateOvercooked` : état râté
+- `StateOvercooked` : état raté
 
-Tous ces états effectue des tâches différentes. La classe `PizzaContext` permet d'adapter le comportement selon l'état du moment de la pizza.
+Tous ces états effectuent des tâches différentes. La classe `PizzaContext` permet d'adapter le comportement selon l'état du moment de la pizza.
 
 #### Diagramme de class
 
