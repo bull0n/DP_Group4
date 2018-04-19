@@ -250,8 +250,12 @@ Notre implémentation nous permet de retourner une nouvelle pizza à chaque appe
 
 #### Diagramme de classe
 
-### Conclusion
+![BuilderPattern](Builder.jpg)
 
+### Conclusion
+Notre solution rempli tous les points du cahier des charges. Ce patron permet de simplifier la création d'objets complexes. Notre implémentation java permet de facilement passer des classes au Builder qui lui va s'occuper de les instancier de manière dynamique.
+
+Celà permet de simplifier le code de l'utilisateur et de caché toute la complexité d'implémentation tout en offrant la possibilité de facilement étendre le système avec l'ajout d'autres décorateurs.
 
 ## State
 Le patron de conception `State` permet de changer le comportement d'un objet selon l'état dans lequel il se trouve. Nous aurions pû mdofier directement la classe `Pizza` mais celà aurait complexifié inutilement le code.
