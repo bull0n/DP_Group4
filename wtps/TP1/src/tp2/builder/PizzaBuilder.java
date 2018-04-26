@@ -33,8 +33,8 @@ public class PizzaBuilder implements PizzaBuilder_I {
 	}
 
 	@Override
-	public void setSize(int radius) {
-		this.radius = radius;
+	public void setSize(int diameter) {
+		this.diameter = diameter;
 	}
 
 	@Override
@@ -43,7 +43,7 @@ public class PizzaBuilder implements PizzaBuilder_I {
 		Pizza_I newPizza = null;
 		try {
 			// Création de la pizza	
-			newPizza = (Pizza_I) pizza.getConstructor(int.class).newInstance(this.radius);
+			newPizza = (Pizza_I) pizza.getConstructor(int.class).newInstance(this.diameter);
 
 			// Ajout de la sauce
 			newPizza = (Pizza_I) sauce.getConstructor(Pizza_I.class).newInstance(newPizza);
@@ -55,14 +55,13 @@ public class PizzaBuilder implements PizzaBuilder_I {
 
 		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
 				| NoSuchMethodException | SecurityException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		return newPizza;
 	}
 
 	// Input
-	int radius;
+	int diameter;
 	Class<? extends PizzaBase> pizza;
 	Class<? extends DecoratorSauce> sauce;
 	List<Class<? extends DecoratorIngredient>> listIngredient;

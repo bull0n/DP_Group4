@@ -10,7 +10,7 @@ public class DecoratorPepperoni extends DecoratorIngredient {
 		super(pizza);
 		this.taste = Tastes.NOT_GOOD;
 		this.aroma = Aromas.SAVOURY;
-		this.price = 0.001f;
+		this.price = 0.01f;
 	}
 
 	@Override
