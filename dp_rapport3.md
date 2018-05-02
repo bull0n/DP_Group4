@@ -18,10 +18,10 @@ numbersections: true
 Pour ce Travail Pratique, il a été demandé d'améliorer le TP n°2 afin d'ajouter une abstract factory pour la création de Pizza.
 
 Une Factory pour divers types de pizza était demandée :
- - Catania
- - Margherita
- - Palerma
- - Profunghi
+- Catania
+- Margherita
+- Palerma
+- Profunghi
 
  Les décorateurs des ingrédients supplémentaires ont été rajoutés avant de commencer le travail sur les Factory.
 
