@@ -32,7 +32,7 @@ Abstract factory est un pattern qui permet de déleguer la construction d'objets
 ### Réalisation
 Nous avons couplé l'implémentation de ce pattern avec le pattern Builder que nous avions implémenté lors du TP n°2.
 
-##### Exemple de code
+#### Exemple de code
 
 ```java
 
