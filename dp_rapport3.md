@@ -30,7 +30,9 @@ Les décorateurs des ingrédients supplémentaires ont été rajouté avant de c
 Abstract factory est un pattern qui permet de déleguer la construction d'objets complexes à une autre classe.
 
 ### Réalisation
-Nous avons couplé l'implémentation de ce pattern avec le pattern Builder que nous avions implémenté lors du TP n°2.
+Nous avons couplé l'implémentation de ce pattern avec le pattern Builder que nous avions implémenté lors du TP n°2. Ce guilder avait déjà été pensé afin de simplifier la création de pizza et nécessitait qu’on lui passe des "Classes" et non pas des objets.
+
+Notre abstract factory est très bien intégré au `Builder` ainsi, pour créer une pizza, il suffit d'hériter de la classe `PizzaFactory_I` et de définir le type de pâte, la sauce et de spécifier la liste des ingrédients que contiendra la pizza.
 
 #### Exemple de code
 Voici le code de l'`Abstract Factory`, son fonctionnement est très simple.
