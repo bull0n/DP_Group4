@@ -7,9 +7,9 @@ import tp2.decorator.ingredient.DecoratorPepper;
 import tp2.decorator.ingredient.DecoratorPepperoni;
 import tp2.decorator.sauce.DecoratorTomato;
 
-public class PizzaFactoryMarguerita extends PizzaFactory_A{
+public class PizzaFactoryMargherita extends PizzaFactory_A{
 	
-	public PizzaFactoryMarguerita() {
+	public PizzaFactoryMargherita() {
 		super();
 		this.pizza = PizzaThin.class;
 		this.sauce = DecoratorTomato.class;

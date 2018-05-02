@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="tp2.factory.PizzaFactoryMarguerita" project="TP1" 
-    file="/TP1/src/tp2/factory/PizzaFactoryMarguerita.java" binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="tp2.factory.PizzaFactoryMargherita" project="TP1" 
+    file="/TP1/src/tp2/factory/PizzaFactoryMargherita.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="81" width="158" x="-70" y="652"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

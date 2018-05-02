@@ -2,7 +2,7 @@ package tp2;
 
 import tp2.builder.Pizzaiolo;
 import tp2.factory.PizzaFactoryCatania;
-import tp2.factory.PizzaFactoryMarguerita;
+import tp2.factory.PizzaFactoryMargherita;
 import tp2.factory.PizzaFactoryPalermo;
 import tp2.factory.PizzaFactoryProfunghi;
 
@@ -12,7 +12,7 @@ public class Client {
 	}
 
 	public static void main() {
-		Pizzaiolo pizzaiolo = new Pizzaiolo(new PizzaFactoryMarguerita());
+		Pizzaiolo pizzaiolo = new Pizzaiolo(new PizzaFactoryMargherita());
 		System.out.println(pizzaiolo.getPizza());
 		
 		pizzaiolo.setPizzaFactory(new PizzaFactoryProfunghi());

@@ -33,9 +33,46 @@ Abstract factory est un pattern qui permet de déleguer la construction d'objets
 Nous avons couplé l'implémentation de ce pattern avec le pattern Builder que nous avions implémenté lors du TP n°2.
 
 #### Exemple de code
+Voici le code de l'`Abstract Factory`, son fonctionnement est très simple.
 
 ```java
+public abstract class PizzaFactory_A {
 
+	public PizzaFactory_A() {
+		listIngredient = new ArrayList<>();
+	}
+
+	public Class<? extends PizzaBase> getNewThickness(){
+		return pizza;
+	}
+
+	public Class<? extends DecoratorSauce> getNewSauce(){
+		return sauce;
+	}
+
+	public List<Class<? extends DecoratorIngredient>> getNewIngredients(){
+		return listIngredient;
+	}
+
+	Class<? extends PizzaBase> pizza;
+	Class<? extends DecoratorSauce> sauce;
+	List<Class<? extends DecoratorIngredient>> listIngredient;
+}
+```
+
+Voici l'implémentation d'une `concrete factory`, dans ce cas Margherita.
+
+```Java
+public class PizzaFactoryMargherita extends PizzaFactory_A{
+
+	public PizzaFactoryMargherita() {
+		super();
+		this.pizza = PizzaThin.class;
+		this.sauce = DecoratorTomato.class;
+		this.listIngredient.add(DecoratorMozzarella.class);
+		this.listIngredient.add(DecoratorOregano.class);
+	}
+}
 ```
 
 #### Diagramme de classe
