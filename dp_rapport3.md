@@ -23,14 +23,14 @@ Une Factory pour divers types de pizza était demandée :
  - Palerma
  - Profunghi
 
- Les décorateurs des ingrédients supplémentaires ont été rajoutés avant de commencer le travail sur les Factorys.
+ Les décorateurs des ingrédients supplémentaires ont été rajoutés avant de commencer le travail sur les Factory.
 
 
 
 ## Abstract factory
 Abstract factory est un pattern qui permet de déléguer la construction d'objets complexes à une autre classe.
 
-### Réalisation
+### Réalisationg
 Nous avons couplé l'implémentation de ce pattern avec le pattern Builder que nous avions implémenté lors du TP n°2. Ce builder avait déjà été pensé afin de simplifier la création de pizza et nécessitait qu’on lui passe des "Classes" et non pas des objets.
 
 Notre abstract factory est très bien intégrée au `Builder` ainsi, pour créer une pizza, il suffit d'hériter de la classe `PizzaFactory_I` et de définir le type de pâte, la sauce et de spécifier la liste des ingrédients que contiendra la pizza.
