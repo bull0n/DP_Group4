@@ -23,7 +23,7 @@ Une Factory pour divers type de pizza était demandé :
  - Palerma
  - Profunghi
 
- Les décorateurs des ingrédients supplémentaires ont été rajouté avant de commencer le travail sur les Factory.
+ Les décorateurs des ingrédients supplémentaires ont été rajoutés avant de commencer le travail sur les Factorys.
 
 
 ## Abstract factory
