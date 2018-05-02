@@ -17,13 +17,13 @@ numbersections: true
 ## Introduction
 Pour ce Travail Pratique, il a été demandé d'améliorer le TP n°2 afin d'ajouter une abstract factory pour la création de Pizza.
 
-Une Factory pour divers type de pizza était demandé :
+Une Factory pour divers types de pizza était demandé :
  - Catania
  - Margherita
  - Palerma
  - Profunghi
 
- Les décorateurs des ingrédients supplémentaires ont été rajouté avant de commencer le travail sur les Factory.
+Les décorateurs des ingrédients supplémentaires ont été rajouté avant de commencer le travail sur les Factory.
 
 
 ## Abstract factory
@@ -80,5 +80,5 @@ public class PizzaFactoryMargherita extends PizzaFactory_A{
 ![Schema de classe](factory.png)
 
 ### Conclusion
-L'objectif est atteint. A l'aide de ce patron, nous avons la possibilité de passer une factory à notre "Pizzaiolo" qui va l'utiliser afin de réalsier de nouvelle pizzas.
+L'objectif est atteint. A l'aide de ce patron, nous avons la possibilité de passer une factory à notre "Pizzaiolo" qui va l'utiliser afin de réaliser de nouvelles pizzas.
 Ce patron s'avère très utile car il permet de simplifier le code du client qui va utiliser notre code pour la création de pizza, il n'a plus à se soucier de comment la Pizza doit être créée ni de son implémentation.
