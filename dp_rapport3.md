@@ -23,6 +23,7 @@ Pour ce Travail Pratique, il a été demandé d'améliorer le TP n°2 afin d'ajo
 Abstract factory est un pattern qui permet de déleguer la construction d'objets complexes à une autre classe.
 
 ### Réalisation
+Nous avons couplé l'implémentation de ce pattern avec le pattern Builder que nous avions implémenté lors du TP n°2.
 
 ##### Exemple de code
 
