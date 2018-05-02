@@ -42,7 +42,7 @@ public class PizzaBuilder implements PizzaBuilder_I {
 		// Build
 		Pizza_I newPizza = null;
 		try {
-			// Création de la pizza	
+			// Création de la pizza
 			newPizza = (Pizza_I) pizza.getConstructor(int.class).newInstance(this.diameter);
 
 			// Ajout de la sauce
